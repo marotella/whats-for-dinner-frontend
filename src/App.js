@@ -29,13 +29,47 @@ function App() {
   }, []);
 
   console.log("Ingredient State:", ingredients);
+  //CREATE - INGREDIENTS 
+  const createIngredient = async (createdIngredient) => {
+    try {
+      console.log(createdIngredient)
+      const response = await fetch(`${URL}api/ingredients`, {
+        method: "POST",
+        body: JSON.stringify(createdIngredient),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      if (!response.ok) {
+        throw new Error("Failed to create ingredient");
+      }
+      getIngredientData();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  //UPDATE - INGREDIETNS
+
+  //DELETE - INGREDIENTS
+
+  //SEARCH - RECIPES
+
+  //CREATE - ACCOUNT
+
+  //LOGIN - ACCOUNT
+
+
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Ingredients!
         </p>
-       
-    </div>
+        <Routes>
+          <Route path="/new" element={<NewIngredientForm createIngredient={createIngredient} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

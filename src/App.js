@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom';
+import NewIngredientForm from './pages/New';
+import { Link } from 'react-router-dom';
+import EditIngredient from './pages/Edit';
 import './App.css';
 
+
 function App() {
+  const URL = "http://localhost:8000/"
+  console.log(URL)
+  const [ingredients, setIngredients] = useState("")
+  const getIngredientData = async () => {
+    try {
+      const response = await fetch(`${URL}api/ingredients`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch ingredient data");
+      }
+      const data = await response.json();
+      setIngredients(data.data);
+      console.log(data.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getIngredientData();
+  }, []);
+
+  console.log("Ingredient State:", ingredients);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       
     </div>
   );
 }

@@ -6,6 +6,8 @@ import UpdateIngredientForm from './pages/Edit';
 import './App.css';
 import Ingredient from "./pages/Ingredient";
 import Ingredients from "./pages/Ingredients";
+import LoginForm from './pages/Login';
+
 
 
 function App() {
@@ -77,7 +79,25 @@ function App() {
   //CREATE - ACCOUNT
 
   //LOGIN - ACCOUNT
-
+  const loginUser = async (username, email, password) => {
+    try{
+      const response = await fetch (`${URL}api/users/login`, {
+        method: "POST",
+        headers: {
+          'Content-Type': "application/json"
+        },
+        body: JSON.stringify({username, email, password})
+      })
+      if(response.ok){
+        const data= await response.json()
+        console.log(data)
+      } else {
+        throw new Error("login failed")
+      }
+    } catch (error){
+      console.error(error)
+    }
+  }
 
   return (
     <Router>
@@ -90,6 +110,7 @@ function App() {
           <Route path="/edit/:id" element={<UpdateIngredientForm ingredients={ingredients} updateIngredient={updateIngredient}/>}/>
           <Route path="/ingredient/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} updateIngredient={updateIngredient}/>}/>
           <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} URL={URL} />} />
+          <Route exact path="/login" element={<LoginForm loginUser={loginUser} URL={URL} />} />
         </Routes>
       </div>
     </Router>

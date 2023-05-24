@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import UpdateIngredientForm from './pages/Edit';
 import './App.css';
 import Ingredient from "./pages/Ingredient";
+import Ingredients from "./pages/Ingredients";
+
 
 function App() {
   const URL = "http://localhost:8000/"
@@ -87,6 +89,7 @@ function App() {
           <Route path="/new" element={<NewIngredientForm createIngredient={createIngredient} />} />
           <Route path="/edit/:id" element={<UpdateIngredientForm ingredients={ingredients} updateIngredient={updateIngredient}/>}/>
           <Route path="/ingredient/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} updateIngredient={updateIngredient}/>}/>
+          <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} URL={URL} />} />
         </Routes>
       </div>
     </Router>

@@ -7,7 +7,7 @@ import './App.css';
 import Ingredient from "./pages/Ingredient";
 import Ingredients from "./pages/Ingredients";
 import LoginForm from './pages/Login';
-
+import RegisterForm from './pages/Register';
 
 
 function App() {
@@ -77,6 +77,25 @@ function App() {
   //SEARCH - RECIPES
 
   //CREATE - ACCOUNT
+  const registerUser = async (username, email, password) => {
+    try{
+      const response = await fetch (`${URL}api/users/register`, {
+        method: "POST",
+        headers: {
+          'Content-Type': "application/json"
+        },
+        body: JSON.stringify({username, email, password})
+      })
+      if(response.ok){
+        const data= await response.json()
+        console.log(data)
+      } else {
+        throw new Error("login failed")
+      }
+    } catch (error){
+      console.error(error)
+    }
+  }
 
   //LOGIN - ACCOUNT
   const loginUser = async (username, email, password) => {
@@ -111,6 +130,7 @@ function App() {
           <Route path="/ingredient/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} updateIngredient={updateIngredient}/>}/>
           <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} URL={URL} />} />
           <Route exact path="/login" element={<LoginForm loginUser={loginUser} URL={URL} />} />
+          <Route exact path="/register" element={<RegisterForm registerUser={registerUser} URL={URL} />} />
         </Routes>
       </div>
     </Router>

@@ -4,7 +4,7 @@ import NewIngredientForm from './pages/New';
 import { Link } from 'react-router-dom';
 import UpdateIngredientForm from './pages/Edit';
 import './App.css';
-import IngredientInfo from "./components/Ingredient";
+import Ingredient from "./pages/Ingredient";
 
 function App() {
   const URL = "http://localhost:8000/"
@@ -20,7 +20,7 @@ function App() {
       setIngredients(data.data);
       console.log(data.data);
     } catch (error) {
-      console.error(error);
+      console.error(error); 
     }
   };
 
@@ -86,7 +86,7 @@ function App() {
         <Routes>
           <Route path="/new" element={<NewIngredientForm createIngredient={createIngredient} />} />
           <Route path="/edit/:id" element={<UpdateIngredientForm ingredients={ingredients} updateIngredient={updateIngredient}/>}/>
-          <Route path="/:id" element={<IngredientInfo ingredients={ingredients} getIngredientData={getIngredientData} updateIngredient={updateIngredient}/>}/>
+          <Route path="/ingredient/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} updateIngredient={updateIngredient}/>}/>
         </Routes>
       </div>
     </Router>

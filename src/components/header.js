@@ -16,6 +16,11 @@ const NavBar = ({ logoutUser }) => {
                             Home
                         </Link>
                         <Link
+                            to="/ingredients" className="link"
+                        >
+                            My Kitchen
+                        </Link>
+                        <Link
                             to="/ingredients/new" className="link"
                         >
                             New

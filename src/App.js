@@ -9,7 +9,7 @@ import Ingredients from "./pages/Ingredients";
 import LoginForm from './pages/Login';
 import RegisterForm from './pages/Register';
 import Header from './components/header';
-
+import Footer from './components/footer';
 function App() {
   const URL = "http://localhost:8000/"
   console.log(URL)
@@ -153,6 +153,8 @@ function App() {
           <Route exact path="/user/register" element={<RegisterForm registerUser={registerUser} URL={URL} />} />
         </Routes>
       </div>
+      <Footer/>
+
     </Router>
   );
 }

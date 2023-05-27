@@ -3,9 +3,13 @@ import {Link, useParams} from "react-router-dom"
 
 const IngredientInfo = ({ ingredient }) => {
   return (
-    <div>
+    <div className="ingredientInfo">
     <h4>{ingredient.ingredient}</h4>
     <h4>{ingredient.quantity}</h4>
+    <div>
+            <button id="delete">DELETE</button>
+            <button>EDIT</button>
+          </div>
   </div >
 )
     }

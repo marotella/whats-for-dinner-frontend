@@ -12,7 +12,7 @@ const Ingredients = ({ingredients}) => {
             <div className="new">
                 <button>Add</button>
                 <div className="ingredientList"> {ingredients.map((ingredient) => (
-                    <IngredientInfo  key={ingredient.id} ingredient={ingredient}  />
+                    <IngredientInfo  key={ingredient.id} ingredient={ingredient} className="ingredient" />
                 ))}
                 </div>
             </div>)

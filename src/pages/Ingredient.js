@@ -1,12 +1,12 @@
 import React from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 
 //pass down the props in the app.js so that we can display individual data, delete and updated
-const Ingredient = ({ingredients, getIngredientData}) => {
+const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
   //use the param to match the id in the database
-  const {id} = useParams();
+  const { id } = useParams();
   //checks that the  data is loaded and then looks for the wine that matches the param of id.
   const ingredient = ingredients.find(ingredient => ingredient.id === parseInt(id))
   useEffect(() => {
@@ -29,21 +29,23 @@ const Ingredient = ({ingredients, getIngredientData}) => {
     //Displays ingredient information and buttons that perform update and delete
     return (
       <section className="showSection">
-      <div className="ingredientInfo">
-        <ul>
-          <li>Ingredient: {ingredient.ingredient}</li>
-          <li>Quantity: {ingredient.quantity}</li>
-          <li>
-            <button id="delete">DELETE</button>
-            <button>EDIT</button>
+        <div className="ingredientInfo">
+          <ul>
+            <li>Ingredient: {ingredient.ingredient}</li>
+            <li>Quantity: {ingredient.quantity}</li>
+            <li>
+              <button onClick={() => deleteIngredient(ingredient.id)} className="delete">DELETE</button>
+              <Link to={`/ingredients/edit/${ingredient.id}`}>
+                <button>EDIT</button>
+              </Link>
           </li>
         </ul>
       </div>
-      </section>
+      </section >
     );
   };
 
-  return <div>{ingredient ? loaded() : loading()}</div>;
+return <div>{ingredient ? loaded() : loading()}</div>;
 };
 
 export default Ingredient;

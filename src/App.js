@@ -74,7 +74,19 @@ function App() {
   };
 
   //DELETE - INGREDIENTS
-
+  const deleteIngredient = async(id) => {
+    try{
+      const response = await fetch (`${URL}api/ingredients/${id}`, {
+        method: "DELETE",
+      });
+      if(!response.ok){
+        throw new Error ("Failed ot delete ingredient.");
+      }
+      getIngredientData()
+    }catch (error){
+      console.error(error)
+    }
+  }
   //SEARCH - RECIPES
 
   //CREATE - ACCOUNT
@@ -147,8 +159,8 @@ function App() {
         <Routes>
           <Route path="/ingredients/new" element={<NewIngredientForm createIngredient={createIngredient} />} />
           <Route path="/ingredients/edit/:id" element={<UpdateIngredientForm ingredients={ingredients} updateIngredient={updateIngredient}/>}/>
-          <Route path="/ingredients/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} updateIngredient={updateIngredient}/>}/>
-          <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} URL={URL} />} />
+          <Route path="/ingredients/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} deleteIngredient={deleteIngredient}updateIngredient={updateIngredient}/>}/>
+          <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} URL={URL} deleteIngredient={deleteIngredient}updateIngredient={updateIngredient}/>} />
           <Route exact path="/user/login" element={<LoginForm loginUser={loginUser} URL={URL} />} />
           <Route exact path="/user/register" element={<RegisterForm registerUser={registerUser} URL={URL} />} />
         </Routes>

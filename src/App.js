@@ -10,6 +10,7 @@ import LoginForm from './pages/Login';
 import RegisterForm from './pages/Register';
 import Header from './components/header';
 import Footer from './components/footer';
+import RecipeSearchForm from './pages/Recipes';
 function App() {
   const URL = "http://localhost:8000/"
   console.log(URL)
@@ -168,6 +169,7 @@ function App() {
           <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} URL={URL} deleteIngredient={deleteIngredient}updateIngredient={updateIngredient}/>} />
           <Route exact path="/user/login" element={<LoginForm loginUser={loginUser} URL={URL} />} />
           <Route exact path="/user/register" element={<RegisterForm registerUser={registerUser} URL={URL} />} />
+          <Route exact path="/ingredients/recipes" element={ <RecipeSearchForm ingredients={ingredients} URL={URL} />} />
         </Routes>
       </div>
       <Footer/>

@@ -92,12 +92,14 @@ function App() {
   //CREATE - ACCOUNT
   const registerUser = async (username, email, password) => {
     try{
+      const registeredUser = { username: username, email: email, password: password }
       const response = await fetch (`${URL}api/users/register`, {
         method: "POST",
         headers: {
           'Content-Type': "application/json"
         },
-        body: JSON.stringify({username, email, password})
+        credentials: "include",
+        body: JSON.stringify({registeredUser})
       })
       if(response.ok){
         const data= await response.json()
@@ -113,17 +115,20 @@ function App() {
   //LOGIN - ACCOUNT
   const loginUser = async (username, email, password) => {
     try{
+      const loggedUser = { username: username, email: email, password: password }
       const response = await fetch (`${URL}api/users/login`, {
         method: "POST",
         headers: {
           'Content-Type': "application/json"
         },
-        body: JSON.stringify({username, email, password})
+        credentials: "include",
+        body: JSON.stringify(loggedUser)
       })
       if(response.ok){
         const data= await response.json()
         console.log(data)
         setIsLoggedIn(true);
+        console.log("Sucessfully logged in!")
       } else {
         throw new Error("login failed")
       }
@@ -136,7 +141,7 @@ function App() {
     const logoutUser = () => {
       fetch(`${URL}api/users/logout`, {
         method: "GET",
-        credentials: "include"
+        credentials: "include",
       })
       .then(response => {
         if (response.ok){

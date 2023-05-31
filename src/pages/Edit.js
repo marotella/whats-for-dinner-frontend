@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 function UpdateIngredientForm({ingredients, updateIngredient }) {
     console.log(ingredients)
     const { id } = useParams();
     const [updatedIngredient, setUpdatedIngredient] = useState({});
     const [ingredient, setIngredient] = useState(null);
-
+    const navigate = useNavigate()
     useEffect(() => {
         const selectedIngredient = ingredients.find(ingredient => ingredient.id === parseInt(id))
         setIngredient(selectedIngredient)
@@ -24,12 +24,15 @@ function UpdateIngredientForm({ingredients, updateIngredient }) {
         event.preventDefault();
         console.log(updateIngredient);
         updateIngredient(id, updatedIngredient)
+        console.log("Inbgredient updated", ingredient)
+        navigate('/ingredients'); 
     }
     if(!ingredient){
         console.log("Ingredient is undefined")
         return null
     }
     console.log("Inbgredient updated", ingredient)
+    
     return (
         <form onSubmit={handleSubmit}>
           <h2>Edit Ingredient</h2>

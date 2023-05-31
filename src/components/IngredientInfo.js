@@ -1,13 +1,20 @@
 import React from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useNavigate } from "react-router-dom"
 
 const IngredientInfo = ({ ingredient, deleteIngredient, updateIngredient}) => {
+  const navigate = useNavigate();
+  const handleDelete = (ingredientId) => {
+    deleteIngredient(ingredientId);
+    navigate(`/ingredients`); // Redirect to the same page after deleting
+  };
   return (
     <div className="ingredientInfo">
-      <h4>{ingredient.ingredient}</h4>
+       <Link to={`/ingredients/${ingredient.id}`}>
+        <h4>{ingredient.ingredient}</h4>
+      </Link>
       <h4>{ingredient.quantity}</h4>
       <div>
-        <button onClick={() => deleteIngredient(ingredient.id)} className="delete">DELETE</button>
+        <button onClick={() => handleDelete(ingredient.id)}className="delete">DELETE</button>
         <Link to={`/ingredients/edit/${ingredient.id}`}>
           <button>EDIT</button>
         </Link>

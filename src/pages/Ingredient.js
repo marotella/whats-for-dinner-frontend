@@ -1,12 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
-
-//pass down the props in the app.js so that we can display individual data, delete and updated
 const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
   //use the param to match the id in the database
   const { id } = useParams();
+  const navigate = useNavigate();
   //checks that the  data is loaded and then looks for the wine that matches the param of id.
   const ingredient = ingredients.find(ingredient => ingredient.id === parseInt(id))
   useEffect(() => {
@@ -15,7 +14,10 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
   }, []);
   console.log(ingredients)
   console.log(ingredient)
-
+  const handleDelete = (ingredientId) => {
+    deleteIngredient(ingredientId);
+    navigate(`/ingredients`); // Redirect to the same page after deleting
+  };
   //Pouring message when the data has not yet landed
   const loading = () => {
     return <h1>Looking through the cupboards...</h1>;
@@ -34,7 +36,7 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
             <li>Ingredient: {ingredient.ingredient}</li>
             <li>Quantity: {ingredient.quantity}</li>
             <li>
-              <button onClick={() => deleteIngredient(ingredient.id)} className="delete">DELETE</button>
+              <button onClick={() => handleDelete(ingredient.id)} className="delete">DELETE</button>
               <Link to={`/ingredients/edit/${ingredient.id}`}>
                 <button>EDIT</button>
               </Link>

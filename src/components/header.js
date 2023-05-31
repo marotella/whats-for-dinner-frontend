@@ -11,11 +11,6 @@ const NavBar = ({ logoutUser }) => {
                             Logo
                         </Link>
                         <Link
-                            to="/" className="link"
-                        >
-                            Home
-                        </Link>
-                        <Link
                             to="/ingredients" className="link"
                         >
                             My Kitchen
@@ -37,7 +32,11 @@ const NavBar = ({ logoutUser }) => {
                             Register
                         </Link>
                         <Link
-                            to="/"
+                            to="/ingredients/recipes" className="link">
+                            Recipes
+                        </Link>
+                        <Link
+                            to="/users/logout"
                             onClick={logoutUser} className="link"
                         >
                             Logout

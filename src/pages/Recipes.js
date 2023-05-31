@@ -4,6 +4,8 @@ const RecipeSearchForm = ({ ingredients }) => {
     console.log(ingredients)
     const [selectedIngredients, setSelectedIngredients] = useState([]);
     const [recipes, setRecipes] = useState([]);
+    const [searchError, setSearchError] = useState(false);
+
 
     const handleIngredientChange = (event) => {
         const { value, checked } = event.target;
@@ -28,12 +30,14 @@ const RecipeSearchForm = ({ ingredients }) => {
             .then((data) => {
                 // Handle the response data
                 console.log(data);
-                setRecipes(data.meals); // Assuming the response data has a "meals" property containing the recipes
-
+                setRecipes(data.meals);
+                setRecipes(data.meals === null ? [] : data.meals);
+                console.log(recipes)
             })
             .catch((error) => {
                 // Handle any errors
                 console.error(error);
+                setRecipes([])
             });
     }
     const loaded = () => {
@@ -53,13 +57,18 @@ const RecipeSearchForm = ({ ingredients }) => {
                 ))}
                 </div>
                 <button type="submit">Search</button>
-                {recipes.map((recipe) => (
-                    <div key={recipe.idMeal}>
-                        <h3>{recipe.strMeal}</h3>
-                        <img src={recipe.strMealThumb} alt={recipe.strMeal} />
-
-                    </div>
-                ))}
+                {recipes && (recipes.length === 0 || recipes === null) ? (
+                    <h3>
+                        Select a different ingredient or add to your kitchen
+                    </h3>
+                ) : (
+                    recipes.map((recipe) => (
+                        <div key={recipe.idMeal}>
+                            <h3>{recipe.strMeal}</h3>
+                            <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+                        </div>
+                    ))
+                )}
             </form>
         )
     };

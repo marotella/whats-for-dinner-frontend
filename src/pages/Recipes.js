@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"
 
-const RecipeSearchForm = ({ ingredients }) => {
-    console.log(ingredients)
+const RecipeSearchForm = ({ ingredients, searchRecipes }) => {
     const [selectedIngredients, setSelectedIngredients] = useState([]);
     const [recipes, setRecipes] = useState([]);
     const [searchError, setSearchError] = useState(false);
@@ -40,6 +40,8 @@ const RecipeSearchForm = ({ ingredients }) => {
                 setRecipes([])
             });
     }
+
+
     const loaded = () => {
         console.log(ingredients);
         return (
@@ -66,17 +68,19 @@ const RecipeSearchForm = ({ ingredients }) => {
                         <div key={recipe.idMeal}>
                             <h3>{recipe.strMeal}</h3>
                             <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+                            <Link to={`/ingredients/recipe/${recipe.idMeal}`}className="link"
+                        >{recipe.strMeal} </Link>
                         </div>
-                    ))
+        ))
                 )}
-            </form>
+            </form >
         )
     };
 
-    const loading = () => {
-        return <h1>Looking through the cupboards...</h1>;
-    };
-    return (ingredients ? loaded() : loading());
+const loading = () => {
+    return <h1>Looking through the cupboards...</h1>;
+};
+return (ingredients ? loaded() : loading());
 }
 
 export default RecipeSearchForm

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link} from 'react-router-dom';
 const RecipeDetails = () => {
     const {id} = useParams()
     const [recipeInfo, setRecipeInfo] = useState(null)
@@ -27,6 +27,7 @@ const RecipeDetails = () => {
             <img src={recipeInfo.thumbnail} alt= "food image" />
             <h2>Instructions:</h2>
             <p>{recipeInfo.instructions}</p>
+            <Link to="/ingredients/recipes" className="backLink"> Back </Link>
         </div>
     );
 };

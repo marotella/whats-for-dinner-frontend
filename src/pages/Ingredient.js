@@ -42,7 +42,9 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
               </Link>
           </li>
         </ul>
+        
       </div>
+      <Link to="/ingredients" className="backLink"> Back </Link>
       </section >
     );
   };

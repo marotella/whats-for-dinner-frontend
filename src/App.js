@@ -19,7 +19,9 @@ function App() {
   const [ingredients, setIngredients] = useState([])
   const getIngredientData = async () => {
     try {
-      const response = await fetch(`${URL}api/ingredients`);
+      const response = await fetch(`${URL}api/ingredients`, {
+        credentials: "include"
+      });
       if (!response.ok) {
         throw new Error("Failed to fetch ingredient data");
       }
@@ -45,7 +47,8 @@ function App() {
         body: JSON.stringify(createdIngredient),
         headers: {
           "Content-Type": "application/json"
-        }
+        },
+        credentials: "include"
       });
       if (!response.ok) {
         throw new Error("Failed to create ingredient");
@@ -64,7 +67,8 @@ function App() {
         body: JSON.stringify(updatedIngredient),
         headers: {
           "Content-Type": "application/json"
-        }
+        },
+        credentials: "include"
       });
       if (!response.ok) {
         throw new Error("Failed to update ingredient");
@@ -80,6 +84,7 @@ function App() {
     try{
       const response = await fetch (`${URL}api/ingredients/${id}`, {
         method: "DELETE",
+        credentials: "include"
       });
       if(!response.ok){
         throw new Error ("Failed ot delete ingredient.");
@@ -89,7 +94,6 @@ function App() {
       console.error(error)
     }
   }
-  //SEARCH - RECIPES
 
   //CREATE - ACCOUNT
   const registerUser = async (username, email, password) => {

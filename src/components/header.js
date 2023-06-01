@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ logoutUser }) => {
 
+const NavBar = ({ logoutUser }) => {
     return (
         <header>
             <div>
+            <img src={process.env.PUBLIC_URL + '/Title.png'} alt="Title" className="title" style={{ margin: 'auto' }}/>
                 <nav>
                         <Link to="/" className="link">
-                            Logo
+                            Home
                         </Link>
                         <Link
                             to="/ingredients" className="link"
@@ -36,7 +37,7 @@ const NavBar = ({ logoutUser }) => {
                             Recipes
                         </Link>
                         <Link
-                            to="/users/logout"
+                            to="/user/logout"
                             onClick={logoutUser} className="link"
                         >
                             Logout

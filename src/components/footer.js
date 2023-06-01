@@ -15,6 +15,7 @@ const Footer = ({ logoutUser }) => {
                         >
                             Contact us
                         </Link>
+                        <img src={process.env.PUBLIC_URL + '/Icon.png'} alt="Icon" className="icon" style={{ margin: 'auto' }}/>
                         <Link
                             to="/" className="link"
                         >
@@ -22,7 +23,7 @@ const Footer = ({ logoutUser }) => {
                         </Link>
                     
                         <Link
-                            to="/"
+                            to="/user/logout"
                             onClick={logoutUser} className="link"
                         >
                             Logout

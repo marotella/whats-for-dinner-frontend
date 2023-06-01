@@ -28,6 +28,9 @@ nav {
   display: flex;
 }
 
+.ingredientLink{
+  color: rgb(250, 248, 250);
+}
 
 .ingredientList{
   display: flex;
@@ -43,15 +46,14 @@ nav {
   justify-content: center;
   padding: 5px;
   margin: 10px;
-  border: 1px solid black;
-  background-color: rgba(0,0,0, .5);
-  border-radius: 5px;
-  color: white;
+  border: 1px solid #E4540E;
+  color: #E4540E;
+  background-color: rgba(228, 84, 14, 0.3);
 }
 
 button {
-  background-color: rgb(127, 9, 111); 
-  border: 1px solid rgb(9, 116, 68);
+  background-color:  rgb(9, 116, 68);
+  border: 1px solid #10B251;
   border-radius: 8px;
   padding: 10px;
   margin: 10px;
@@ -68,12 +70,41 @@ button {
 input {
   padding: 5px;
   margin: 5px;
-  color:rgb(127, 9, 111);
-  border: 1px solid rgb(9, 116, 68); 
+  color:#E4540E;
+  border: 1px solid #10B251; 
   border-radius: 5px;
 }
 
 label {
   font-weight: 600;
-  color:rgb(9, 116, 68); 
+  color: #E4540E;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  max-height: 40px;
+}
+
+.homeImage1{
+  max-width: 600px; 
+  height: auto; 
+}
+
+.homeSection1{
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.description1{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5px;
 }

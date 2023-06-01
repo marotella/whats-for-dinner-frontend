@@ -12,6 +12,7 @@ import Header from './components/header';
 import Footer from './components/footer';
 import RecipeSearchForm from './pages/Recipes';
 import RecipeDetails from "./pages/RecipeInfo"
+import Home from "./pages/Home"
 function App() {
   const URL = "http://localhost:8000/"
   console.log(URL)
@@ -29,7 +30,7 @@ function App() {
       setIngredients(data.data);
       console.log(data.data);
     } catch (error) {
-      console.error(error); 
+      console.error(error);
     }
   };
 
@@ -80,49 +81,49 @@ function App() {
   };
 
   //DELETE - INGREDIENTS
-  const deleteIngredient = async(id) => {
-    try{
-      const response = await fetch (`${URL}api/ingredients/${id}`, {
+  const deleteIngredient = async (id) => {
+    try {
+      const response = await fetch(`${URL}api/ingredients/${id}`, {
         method: "DELETE",
         credentials: "include"
       });
-      if(!response.ok){
-        throw new Error ("Failed ot delete ingredient.");
+      if (!response.ok) {
+        throw new Error("Failed ot delete ingredient.");
       }
       getIngredientData()
-    }catch (error){
+    } catch (error) {
       console.error(error)
     }
   }
 
   //CREATE - ACCOUNT
   const registerUser = async (username, email, password) => {
-    try{
+    try {
       const registeredUser = { username: username, email: email, password: password }
-      const response = await fetch (`${URL}api/users/register`, {
+      const response = await fetch(`${URL}api/users/register`, {
         method: "POST",
         headers: {
           'Content-Type': "application/json"
         },
         credentials: "include",
-        body: JSON.stringify({registeredUser})
+        body: JSON.stringify({ registeredUser })
       })
-      if(response.ok){
-        const data= await response.json()
+      if (response.ok) {
+        const data = await response.json()
         console.log(data)
       } else {
         throw new Error("login failed")
       }
-    } catch (error){
+    } catch (error) {
       console.error(error)
     }
   }
 
   //LOGIN - ACCOUNT
   const loginUser = async (username, email, password) => {
-    try{
+    try {
       const loggedUser = { username: username, email: email, password: password }
-      const response = await fetch (`${URL}api/users/login`, {
+      const response = await fetch(`${URL}api/users/login`, {
         method: "POST",
         headers: {
           'Content-Type': "application/json"
@@ -130,55 +131,54 @@ function App() {
         credentials: "include",
         body: JSON.stringify(loggedUser)
       })
-      if(response.ok){
-        const data= await response.json()
+      if (response.ok) {
+        const data = await response.json()
         console.log(data)
         setIsLoggedIn(true);
         console.log("Sucessfully logged in!")
       } else {
         throw new Error("login failed")
       }
-    } catch (error){
+    } catch (error) {
       console.error(error)
     }
   }
 
-    //LOGOUT - ACCOUNT
-    const logoutUser = () => {
-      fetch(`${URL}api/users/logout`, {
-        method: "GET",
-        credentials: "include",
-      })
+  //LOGOUT - ACCOUNT
+  const logoutUser = () => {
+    fetch(`${URL}api/users/logout`, {
+      method: "GET",
+      credentials: "include",
+    })
       .then(response => {
-        if (response.ok){
+        if (response.ok) {
           console.log("Logout completed")
           setIsLoggedIn(false);
-        } else{
+        } else {
           throw new Error("Logout failed.")
         }
       })
       .catch(error => {
         console.error(error)
       })
-    }
+  }
   return (
     <Router>
       <div className="App">
-        <h1>What's for Dinner?</h1>
-        <button onClick={logoutUser}>Logout</button>
-        <Header/>
+        <Header logoutUser={logoutUser} />
         <Routes>
+          <Route path="/" element = {<Home registerUser={registerUser} loginUser={loginUser}/>}/>
           <Route path="/ingredients/new" element={<NewIngredientForm createIngredient={createIngredient} />} />
-          <Route path="/ingredients/edit/:id" element={<UpdateIngredientForm ingredients={ingredients} updateIngredient={updateIngredient}/>}/>
-          <Route path="/ingredients/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} deleteIngredient={deleteIngredient}updateIngredient={updateIngredient}/>}/>
-          <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} URL={URL} deleteIngredient={deleteIngredient}updateIngredient={updateIngredient}/>} />
+          <Route path="/ingredients/edit/:id" element={<UpdateIngredientForm ingredients={ingredients} updateIngredient={updateIngredient} />} />
+          <Route path="/ingredients/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} deleteIngredient={deleteIngredient} updateIngredient={updateIngredient} />} />
+          <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} URL={URL} deleteIngredient={deleteIngredient} updateIngredient={updateIngredient} />} />
           <Route exact path="/user/login" element={<LoginForm loginUser={loginUser} URL={URL} />} />
           <Route exact path="/user/register" element={<RegisterForm registerUser={registerUser} URL={URL} />} />
-          <Route exact path="/ingredients/recipe/:id" element={ <RecipeDetails/>} />
-          <Route exact path="/ingredients/recipes" element={ <RecipeSearchForm ingredients={ingredients} URL={URL} />} />
+          <Route exact path="/ingredients/recipe/:id" element={<RecipeDetails />} />
+          <Route exact path="/ingredients/recipes" element={<RecipeSearchForm ingredients={ingredients} URL={URL} />} />
         </Routes>
       </div>
-      <Footer/>
+      <Footer />
 
     </Router>
   );

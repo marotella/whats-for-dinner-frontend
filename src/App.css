@@ -29,7 +29,7 @@ nav {
 }
 
 .ingredientLink{
-  color: rgb(250, 248, 250);
+  color: #E4540E;;
 }
 
 .ingredientList{
@@ -37,6 +37,7 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-image: linear-gradient(to left, rgb(9, 116, 68, 1), rgba(9, 116, 68, .4));
 }
 
 .ingredientInfo {
@@ -48,8 +49,7 @@ nav {
   margin: 10px;
   border: 1px solid #E4540E;
   color: #E4540E;
-  background-color: rgba(228, 84, 14, 0.3);
-}
+  background-image: linear-gradient(to bottom,rgb(250, 248, 250, 1),rgb(250, 248, 250, .6));}
 
 button {
   background-color:  rgb(9, 116, 68);
@@ -90,6 +90,7 @@ label {
 }
 
 .homeImage1{
+  padding: 5px;
   max-width: 600px; 
   height: auto; 
 }
@@ -104,7 +105,28 @@ label {
   padding: 5px;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: center;
   flex-direction: column;
   margin: 5px;
+  background-image: linear-gradient(to right, rgb(9, 116, 68, 1), rgba(9, 116, 68, .8));
+  color: white;
+}
+
+.homeSection2{
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.description2{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 5px;
+  background-image: linear-gradient(to left, rgb(9, 116, 68, 1), rgba(9, 116, 68, .8));
+  color: white;
 }

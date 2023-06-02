@@ -13,6 +13,7 @@ import Footer from './components/footer';
 import RecipeSearchForm from './pages/Recipes';
 import RecipeDetails from "./pages/RecipeInfo"
 import Home from "./pages/Home"
+
 function App() {
   const URL = "http://localhost:8000/"
   console.log(URL)

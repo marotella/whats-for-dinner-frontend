@@ -34,22 +34,27 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
         <div className="ingredientInfo">
           <ul>
             <li>Ingredient: {ingredient.ingredient}</li>
+            {ingredient.image ? (
+              <img src={`https://www.themealdb.com/images/ingredients/${ingredient.ingredient}.png`} alt={ingredient.ingredient} />
+            ) : (
+              <img src={process.env.PUBLIC_URL + '/Fork.png'} alt="default" className="fork" />
+            )}
             <li>Quantity: {ingredient.quantity}</li>
             <li>
               <button onClick={() => handleDelete(ingredient.id)} className="delete">DELETE</button>
               <Link to={`/ingredients/edit/${ingredient.id}`}>
                 <button>EDIT</button>
               </Link>
-          </li>
-        </ul>
-        
-      </div>
-      <Link to="/ingredients" className="backLink"> Back </Link>
+            </li>
+          </ul>
+
+        </div>
+        <Link to="/ingredients" className="backLink"> Back </Link>
       </section >
     );
   };
 
-return <div>{ingredient ? loaded() : loading()}</div>;
+  return <div>{ingredient ? loaded() : loading()}</div>;
 };
 
 export default Ingredient;

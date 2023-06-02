@@ -7,12 +7,15 @@ const IngredientInfo = ({ ingredient, deleteIngredient, updateIngredient}) => {
     deleteIngredient(ingredientId);
     navigate(`/ingredients`); // Redirect to the same page after deleting
   };
+  const imageSource = `https://www.themealdb.com/images/ingredients/${ingredient.ingredient}.png`;
+  const fallbackImage = process.env.PUBLIC_URL + '/Fork.png';
   return (
-    <div className="ingredientInfo">
+    
+    <div className="ingredientTile">
        <Link to={`/ingredients/${ingredient.id}`}className="ingredientLink">
         <h4>{ingredient.ingredient}</h4>
       </Link>
-      <h4>{ingredient.quantity}</h4>
+      <img className="ingredientThumb" src={imageSource} alt={ingredient.ingredient} onError={(e) => e.target.src = fallbackImage} />
       <div>
         <button onClick={() => handleDelete(ingredient.id)}className="delete">DELETE</button>
         <Link to={`/ingredients/edit/${ingredient.id}`}>

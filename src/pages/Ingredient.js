@@ -22,6 +22,8 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
   const loading = () => {
     return <h1>Looking through the cupboards...</h1>;
   };
+  const imageSource = `https://www.themealdb.com/images/ingredients/${ingredient.ingredient}.png`;
+  const fallbackImage = process.env.PUBLIC_URL + '/Fork.png';
 
   const loaded = () => {
     const ingredient = ingredients.find(ingredient => ingredient.id === parseInt(id))
@@ -32,29 +34,23 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
     return (
       <section className="showSection">
         <div className="ingredientInfo">
-          <ul>
-            <li>Ingredient: {ingredient.ingredient}</li>
-            {ingredient.image ? (
-              <img src={`https://www.themealdb.com/images/ingredients/${ingredient.ingredient}.png`} alt={ingredient.ingredient} />
-            ) : (
-              <img src={process.env.PUBLIC_URL + '/Fork.png'} alt="default" className="fork" />
-            )}
-            <li>Quantity: {ingredient.quantity}</li>
-            <li>
-              <button onClick={() => handleDelete(ingredient.id)} className="delete">DELETE</button>
-              <Link to={`/ingredients/edit/${ingredient.id}`}>
-                <button>EDIT</button>
-              </Link>
-            </li>
-          </ul>
-
+          <div>
+            <h3>Ingredient: {ingredient.ingredient}</h3>
+            <h3>Quantity: {ingredient.quantity}</h3>
+          </div>
+          <img className="ingredientShow" src={imageSource} alt={ingredient.ingredient} onError={(e) => e.target.src = fallbackImage} />
         </div>
+        <div>
+        <button onClick={() => handleDelete(ingredient.id)} className="delete">DELETE</button>
+        <Link to={`/ingredients/edit/${ingredient.id}`}><button>EDIT</button>
+        </Link>
         <Link to="/ingredients" className="backLink"> Back </Link>
+      </div>
       </section >
     );
   };
 
-  return <div>{ingredient ? loaded() : loading()}</div>;
+return <div>{ingredient ? loaded() : loading()}</div>;
 };
 
 export default Ingredient;

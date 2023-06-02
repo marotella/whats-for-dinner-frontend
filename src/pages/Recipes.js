@@ -45,42 +45,58 @@ const RecipeSearchForm = ({ ingredients, searchRecipes }) => {
     const loaded = () => {
         console.log(ingredients);
         return (
+
             <form onSubmit={handleRecipeSubmit}>
-                <div className="ingredientList"> {ingredients.map((ingredient) => (
-                    <label>
+                <button type="submit">Search</button>
+                <div className="recipeSearch"> {ingredients.map((ingredient) => (
+                    <label className="ingredientSelector">
+
                         <input
+                            className="check"
                             type="checkbox"
                             value={ingredient.ingredient}
                             checked={selectedIngredients.includes(ingredient.ingredient)}
                             onChange={handleIngredientChange}
                         />
-                        {ingredient.ingredient}
+                        <div className="ingredientSelection">
+                            {ingredient.ingredient}
+                            <img
+                                className="ingredientThumb"
+                                src={`https://www.themealdb.com/images/ingredients/${ingredient.ingredient}.png`}
+                                alt={ingredient.ingredient}
+                                onError={(e) => {
+                                    e.target.src = process.env.PUBLIC_URL + '/Fork.png';
+                                }}
+                            />
+                        </div>
                     </label>
                 ))}
                 </div>
-                <button type="submit">Search</button>
-                {recipes && (recipes.length === 0 || recipes === null) ? (
-                    <h3>
-                        Select a different ingredient or add to your kitchen
-                    </h3>
-                ) : (
-                    recipes.map((recipe) => (
-                        <div key={recipe.idMeal}>
-                            <h3>{recipe.strMeal}</h3>
-                            <img src={recipe.strMealThumb} alt={recipe.strMeal} />
-                            <Link to={`/ingredients/recipe/${recipe.idMeal}`}className="link"
-                        >{recipe.strMeal} </Link>
-                        </div>
-        ))
+                <div className="recipeResults">
+                    {recipes && (recipes.length === 0 || recipes === null) ? (
+                        <h3>
+                            Select a different ingredient or add to your kitchen
+                        </h3>
+                    ) : (
+                        recipes.map((recipe) => (
+                            <div className="recipeIcon" key={recipe.idMeal}>
+                                <Link to={`/ingredients/recipe/${recipe.idMeal}`} className="link"
+                                ><h3>{recipe.strMeal} </h3></Link>
+                                <img src={recipe.strMealThumb} alt={recipe.strMeal} className="recipeImage"/>
+                                
+                            </div>
+                        
+                ))
                 )}
+                </div>
             </form >
         )
     };
 
-const loading = () => {
-    return <h1>Looking through the cupboards...</h1>;
-};
-return (ingredients ? loaded() : loading());
+    const loading = () => {
+        return <h1>Looking through the cupboards...</h1>;
+    };
+    return (ingredients ? loaded() : loading());
 }
 
 export default RecipeSearchForm

@@ -1,6 +1,6 @@
 
 import React, { useState } from "react"
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const RegisterForm = ({ registerUser }) => {
   const [username, setUsername] = useState("")
@@ -18,56 +18,63 @@ const RegisterForm = ({ registerUser }) => {
     }
     try {
       const response = await registerUser(username, email, password)
-      if (response.status === 201 ) {
-       navigate("/ingredients")
+      if (response.status === 201) {
+        navigate("/ingredients")
       } else {
         const errorMessageResponse = await response.json()
         if (errorMessageResponse.message === "A user with that email already exists. Please login.") {
-        setErrorMessage("A user with that email already exists. Please login.")
-      } else {
-        setErrorMessage("An account already exists under that email. Please login.")
+          setErrorMessage("A user with that email already exists. Please login.")
+        } else {
+          setErrorMessage("An account already exists under that email. Please login.")
+        }
       }
-    }
     } catch (error) {
       setErrorMessage(error.message)
       console.error(error)
     }
   }
-    return (
-      <div>
-        <h1>Register for your What's for Dinner Account</h1>
-        <p>Enter your information below to create and account! Then you can get started creating your kitchen and finding new recipes to prepare.</p>
-        {errorMessage && <p>{errorMessage}</p>}
+  return (
+    <div>
+      <h1 class="p-5 font-medium fontsize text-3xl text-center">Register for your What's for Dinner Account</h1>
+      <div class="flex row">
+        <div class="w-1/2 p-5">
+          <img src={process.env.PUBLIC_URL + '/Apron.jpg'} alt="apron" className="registerImage" />
+        </div>
+        <div class="w-1/2 p-5 flex-col">
+          <p class="object-top">Enter your information below to create and account! Then you can get started creating your kitchen and finding new recipes to prepare.</p>
+          {errorMessage && <p>{errorMessage}</p>}
 
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-          <button type="submit">Register</button>
-        </form>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            <button type="submit">Register</button>
+          </form>
+        </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 
-  export default RegisterForm
+export default RegisterForm

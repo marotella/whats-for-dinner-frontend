@@ -50,14 +50,14 @@ nav {
   color: #E4540E;
   background-image: linear-gradient(to bottom,rgb(250, 248, 250, 1),rgb(250, 248, 250, .6));}
 
-button {
+/* button {
   background-color:  rgb(9, 116, 68);
   border: 1px solid #10B251;
   border-radius: 8px;
   padding: 10px;
   margin: 10px;
   color: white;
-}
+} */
 
 .newIngredientForm{
   display: flex;
@@ -207,4 +207,25 @@ label {
 .recipeIcon{
   max-width: 165px;
   margin: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  max-width: 300px;
+}
+
+.loginImage {
+  display: flex;
+  max-height: 400px;
+  align-items: center;
+}
+
+.registerImage {
+  display: flex;
+  max-height: 400px;
+  align-items: center;
 }

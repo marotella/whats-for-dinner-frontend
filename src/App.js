@@ -107,16 +107,17 @@ function App() {
           'Content-Type': "application/json"
         },
         credentials: "include",
-        body: JSON.stringify({ registeredUser })
+        body: JSON.stringify(registeredUser)
       })
       if (response.ok) {
         const data = await response.json()
         console.log(data)
+        return data;
       } else {
-        throw new Error("login failed")
+        throw await response.json();
       }
     } catch (error) {
-      console.error(error)
+      throw error
     }
   }
 

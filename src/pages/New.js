@@ -21,7 +21,7 @@ function NewIngredientForm({ createIngredient }) {
     event.preventDefault();
     // Handle form submission using the formData object
     console.log(formData);
-    // Reset the form
+    
     try {
       await createIngredient(formData)
       setFormData({

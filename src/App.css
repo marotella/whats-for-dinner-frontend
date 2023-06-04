@@ -14,7 +14,6 @@ nav {
   position: sticky;
   justify-content: space-between;
   top: 0;
-  min-width: 100vw;
   z-index: 100;
 }
 

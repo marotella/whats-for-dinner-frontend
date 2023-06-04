@@ -39,7 +39,7 @@ const LoginForm = ({ loginUser }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <div>
-        <button class="bg-green-700 hover:bg-white border-green-500 rounded-lg px-5 m-3 text-white hover:text-green-700 focus:bg-orange-500 focus:text-white" type="submit">Log In</button>
+        <button class="bg-green hover:bg-white border-lightGreen rounded-lg px-5 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Log In</button>
         </div>
       </form>
       </div>

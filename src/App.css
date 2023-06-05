@@ -208,10 +208,10 @@ input {
   margin: 5px;
 }
 
-form {
+/* form {
   display: flex;
   flex-direction: column;
-}
+} */
 
 input {
   max-width: 200px;

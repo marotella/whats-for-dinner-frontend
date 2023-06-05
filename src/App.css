@@ -69,7 +69,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #E4540E;
+  /* color: #E4540E; */
   background-image: linear-gradient(to bottom,rgb(250, 248, 250, 1),rgb(250, 248, 250, .6));
   border: 1px solid #10B251;
   padding: 5px;
@@ -152,7 +152,7 @@ input {
   margin: 5px;
 }
 
-.ingredientSelector {
+/* .ingredientSelector {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -178,17 +178,17 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
-.recipeSearch{
+/* .recipeSearch{
   width: 50%;
   float: left;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
+} */
 
-.recipeResults {
+/* .recipeResults {
   width: 50%;
   float: left;
   display: flex;
@@ -196,7 +196,7 @@ input {
   flex-wrap: wrap;
   padding: 5px;
   margin: 5px;
-}
+} */
 
 .recipeImage{
   max-width: 150px;

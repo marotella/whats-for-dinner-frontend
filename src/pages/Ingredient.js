@@ -34,23 +34,31 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
     return (
       <section className="showSection">
         <div className="ingredientInfo">
-          <div>
-            <h3>Ingredient: {ingredient.ingredient}</h3>
-            <h3>Quantity: {ingredient.quantity}</h3>
+          <div class="font-medium p-5">
+            <h3 class="p-2">Ingredient: {ingredient.ingredient}</h3>
+            <h3 class="p-2">Quantity: {ingredient.quantity}</h3>
+            <div class="flex flex-row m-4 objects-center">
+              <button onClick={() => handleDelete(ingredient.id)} className="text-white bg-green p-2 m-2 hover:bg-white hover:text-green"><span class="material-symbols-outlined">
+                delete
+              </span></button>
+              <Link to={`/ingredients/edit/${ingredient.id}`}><button className="text-white bg-green hover:bg-white hover:text-green p-2 m-2"><span class="material-symbols-outlined">
+                edit
+              </span></button>
+              </Link>
+            </div>
           </div>
           <img className="ingredientShow" src={imageSource} alt={ingredient.ingredient} onError={(e) => e.target.src = fallbackImage} />
         </div>
         <div>
-        <button onClick={() => handleDelete(ingredient.id)} className="delete">DELETE</button>
-        <Link to={`/ingredients/edit/${ingredient.id}`}><button>EDIT</button>
-        </Link>
-        <Link to="/ingredients" className="backLink"> Back </Link>
-      </div>
+          <Link to="/ingredients" className="text-green">  <span class="material-symbols-outlined">
+            arrow_back
+          </span>  Back </Link>
+        </div>
       </section >
     );
   };
 
-return <div>{ingredient ? loaded() : loading()}</div>;
+  return <div>{ingredient ? loaded() : loading()}</div>;
 };
 
 export default Ingredient;

@@ -7,27 +7,28 @@ const Footer = ({ logoutUser }) => {
         <header>
             <div>
                 <nav className='footer'>
-                        <Link to="/" className="link">
-                            Logo
-                        </Link>
-                        <Link
-                            to="/" className="link"
-                        >
-                            Contact us
-                        </Link>
-                        <img src={process.env.PUBLIC_URL + '/Icon.png'} alt="Icon" className="icon" style={{ margin: 'auto' }}/>
-                        <Link
-                            to="/" className="link"
-                        >
-                            Home
-                        </Link>
-                    
-                        <Link
-                            to="/user/logout"
-                            onClick={logoutUser} className="link"
-                        >
-                            Logout
-                        </Link>
+                    <Link to="/" className="link">
+                        About us
+                    </Link>
+                    <Link
+                        to="/" className="link"
+                    >
+                        Contact us
+                    </Link>
+                    <img src={process.env.PUBLIC_URL + '/Icon.png'} alt="Icon" className="icon" style={{ margin: 'auto' }} />
+                    <Link to="/" className="link">
+                        <span class="material-symbols-outlined">
+                            home
+                        </span>
+                    </Link>
+                    <Link
+                        to="/user/logout"
+                        onClick={logoutUser} className="link"
+                    >
+                        <span class="material-symbols-outlined">
+                            logout
+                        </span>
+                    </Link>
                 </nav>
             </div>
         </header>

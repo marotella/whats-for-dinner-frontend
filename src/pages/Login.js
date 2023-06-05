@@ -11,6 +11,7 @@ const LoginForm = ({ loginUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     loginUser(username, email, password)
+    navigate("/ingredients")
   }
   return (
     <div>

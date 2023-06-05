@@ -45,51 +45,64 @@ const RecipeSearchForm = ({ ingredients, searchRecipes }) => {
     const loaded = () => {
         console.log(ingredients);
         return (
-
-            <form onSubmit={handleRecipeSubmit}>
-                <button type="submit">Search</button>
-                <div className="recipeSearch"> {ingredients.map((ingredient) => (
-                    <label className="ingredientSelector">
-
-                        <input
-                            className="check"
-                            type="checkbox"
-                            value={ingredient.ingredient}
-                            checked={selectedIngredients.includes(ingredient.ingredient)}
-                            onChange={handleIngredientChange}
-                        />
-                        <div className="ingredientSelection">
-                            {ingredient.ingredient}
-                            <img
-                                className="ingredientThumb"
-                                src={`https://www.themealdb.com/images/ingredients/${ingredient.ingredient}.png`}
-                                alt={ingredient.ingredient}
-                                onError={(e) => {
-                                    e.target.src = process.env.PUBLIC_URL + '/Fork.png';
-                                }}
-                            />
+            <div class="flex text-center flex-col p-5 m-5">
+                <h3 class='text-xl font-medium p-2'>What's for Dinner Recipe Book</h3>
+                <div class="flex text-left">
+                    <p>Use your kitchen to discover new recipes!<br /><br /> Select 1-3 items to search our cookbooks and discover something new to make for dinner.</p>
+                </div>
+                <div>
+                    <form onSubmit={handleRecipeSubmit}>
+                        <button type="submit"><span class="material-symbols-outlined text-white bg-green text-4xl items-center">
+                            search
+                        </span>Search</button>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 w-3/5"> {ingredients.map((ingredient) => (
+                                <label className="ingredientSelector flex items-center flex-col border border-lightGreen border-2">
+                                    <div class="flex flex-row text-center justify-center items-center p-2">
+                                    <input
+                                        className="check m-1 p-2"
+                                        type="checkbox"
+                                        value={ingredient.ingredient}
+                                        checked={selectedIngredients.includes(ingredient.ingredient)}
+                                        onChange={handleIngredientChange}
+                                    />
+                                    <p class="p-4">{ingredient.ingredient}</p>
+                                    </div>
+                                    <div className="ingredientSelection flex items-center">
+                                        <img
+                                            className="ingredientThumb"
+                                            src={`https://www.themealdb.com/images/ingredients/${ingredient.ingredient}.png`}
+                                            alt={ingredient.ingredient}
+                                            onError={(e) => {
+                                                e.target.src = process.env.PUBLIC_URL + '/Fork.png';
+                                            }}
+                                        />
+                                    </div>
+                                </label>
+                        ))}
                         </div>
-                    </label>
-                ))}
-                </div>
-                <div className="recipeResults">
-                    {recipes && (recipes.length === 0 || recipes === null) ? (
-                        <h3>
-                            Select a different ingredient or add to your kitchen
-                        </h3>
-                    ) : (
-                        recipes.map((recipe) => (
-                            <div className="recipeIcon" key={recipe.idMeal}>
-                                <Link to={`/ingredients/recipe/${recipe.idMeal}`} className="link"
-                                ><h3>{recipe.strMeal} </h3></Link>
-                                <img src={recipe.strMealThumb} alt={recipe.strMeal} className="recipeImage"/>
+                        <div className="">
+                            {recipes && (recipes.length === 0 || recipes === null) ? (
+                                <h3>
+                                    Select a different ingredient or add to your kitchen
+                                </h3>
+                            
+                            ) : (
+                                recipes.map((recipe) => (
+                                    <div className="recipeIcon" key={recipe.idMeal}>
+                                        <Link to={`/ingredients/recipe/${recipe.idMeal}`} className="link"
+                                        ><h3>{recipe.strMeal} </h3></Link>
+                                        <img src={recipe.strMealThumb} alt={recipe.strMeal} className="recipeImage" />
+
+                                    </div>
                                 
-                            </div>
-                        
-                ))
-                )}
+
+                                ))
+                                
+                            )}
+                        </div>
+                    </form >
                 </div>
-            </form >
+            </div>
         )
     };
 

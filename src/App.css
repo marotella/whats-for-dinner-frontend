@@ -199,12 +199,14 @@ input {
 } */
 
 .recipeImage{
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 125px;
+  max-height: 125px;
+  margin: 5px
 }
 
 .recipeIcon{
-  max-width: 165px;
+  min-width: 300px;
+  max-width: 300px;
   margin: 5px;
 }
 
@@ -235,3 +237,4 @@ input {
   max-height: 400px;
   align-items: center;
 }
+

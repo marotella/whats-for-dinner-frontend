@@ -13,7 +13,7 @@ import Footer from './components/footer';
 import RecipeSearchForm from './pages/Recipes';
 import RecipeDetails from "./pages/RecipeInfo"
 import Home from "./pages/Home"
-
+import About from "./pages/About"
 function App() {
   const URL = "http://localhost:8000/"
   console.log(URL)
@@ -178,6 +178,7 @@ function App() {
           <Route exact path="/user/register" element={<RegisterForm registerUser={registerUser} getIngredientData={getIngredientData} URL={URL} />} />
           <Route exact path="/ingredients/recipe/:id" element={<RecipeDetails />} />
           <Route exact path="/ingredients/recipes" element={<RecipeSearchForm ingredients={ingredients} URL={URL} />} />
+          <Route exact path="/about" element={<About URL={URL} />} />
         </Routes>
       </div>
       <Footer />

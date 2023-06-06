@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = ({ logoutUser }) => {
     return (
-        <header class="w-full "> 
+        <header class="w-full"> 
             <div>
                 <img src={process.env.PUBLIC_URL + '/Title.png'} alt="Title" className="title" style={{ margin: 'auto' }} />
                 <nav class="flex flex-wrap justify-between items-center p-2">
@@ -13,7 +13,7 @@ const NavBar = ({ logoutUser }) => {
                             home
                         </span>
                     </Link>
-                    <Link to="/" className="text-white hover:text-orange flex justify-center items-center hover:underline">
+                    <Link to="/about" className="text-white hover:text-orange flex justify-center items-center hover:underline">
                         About us
                     </Link>
                     <Link

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-const LoginForm = ({ loginUser }) => {
+const LoginForm = ({ loginUser, getIngredientData }) => {
   const [username, setUsername] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -12,6 +12,7 @@ const LoginForm = ({ loginUser }) => {
     e.preventDefault()
     loginUser(username, email, password)
     navigate("/ingredients")
+    getIngredientData()
   }
   return (
     <div>

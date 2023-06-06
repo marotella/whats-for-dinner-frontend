@@ -24,6 +24,7 @@ const RecipeSearchForm = ({ ingredients, searchRecipes }) => {
             headers: {
                 'Content-Type': 'application/json',
             },
+            credentials: "include",
             body: JSON.stringify({ ingredients: selectedIngredients }),
         })
             .then((response) => response.json())
@@ -52,21 +53,12 @@ const RecipeSearchForm = ({ ingredients, searchRecipes }) => {
                                 <br />
                                 Select 1-3 items to search our cookbooks and discover something new to make for dinner.
                             </p>
-                <div className="flex flex-wrap">
-                    <form onSubmit={handleRecipeSubmit} className="flex flex-col md:flex-row">
-                        <div className="w-full md:w-1/2">
-                        
-                            <div className="flex justify-center">
-                                <button type="submit" className="flex items-center bg-green text-white py-2 px-4 mt-4">
-                                    <span className="material-symbols-outlined text-4xl mr-2">
-                                        search
-                                    </span>
-                                    Search
-                                </button>
-                            </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                <div className="ingredientSelector">
+                    <form onSubmit={handleRecipeSubmit}>
+                        <div className="w-full">
+                            <div className="flex flex-row flex-wrap">
                                 {ingredients.map((ingredient) => (
-                                    <label className="ingredientSelector flex items-center flex-col border border-lightGreen border-2 bg-white" key={ingredient.ingredient}>
+                                    <label className="ingredientSelector flex items-center text-green font-medium text-s" key={ingredient.ingredient}>
                                         <div className="flex flex-row text-center justify-center items-center p-2">
                                             <input
                                                 className="check m-1 p-2"
@@ -78,22 +70,28 @@ const RecipeSearchForm = ({ ingredients, searchRecipes }) => {
                                             <p class="p-4">{ingredient.ingredient}</p>
                                         </div>
                                         <div className="ingredientSelection flex items-center">
-                                            <img
+                                            {/* <img
                                                 className="ingredientThumb"
                                                 src={`https://www.themealdb.com/images/ingredients/${ingredient.ingredient}.png`}
                                                 alt={ingredient.ingredient}
                                                 onError={(e) => {
                                                     e.target.src = process.env.PUBLIC_URL + '/Fork.png';
                                                 }}
-                                            />
+                                            /> */}
                                         </div>
                                     </label>
                                 ))}
                             </div>
+                            <div className="flex justify-center">
+                                <button type="submit" className="flex items-center bg-green text-white py-1 px-1 mt-2">
+                                    <span className="material-symbols-outlined text-4xl mr-2">search</span>
+                                    Search
+                                </button>
+                            </div>
                         </div>
-                        <div className="w-full md:w-1/2 items-center p-2">
+                        <div className="w-full items-center p-2">
                             <h3 className="text-center text-xl p-1">Search Results</h3>
-                            <div className="flex flex-col items-center justify-center">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4 flex justify-center">
                                 {recipes && (recipes.length === 0 || recipes === null) ? (
                                     <h3>
                                         Select an ingredient to search!

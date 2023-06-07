@@ -37,13 +37,13 @@ function NewIngredientForm({ createIngredient }) {
 
   return (
     <div>
-      <h3 class="p-5 font-medium fontsize text-2xl text-center">Add a new ingredient to your kitchen!</h3>
-      <div class="flex flex-row">
+      <h3 className="p-5 font-medium fontsize text-2xl text-center">Add a new ingredient to your kitchen!</h3>
+      <div className="flex flex-row">
         
-        <div class= "flex flex-col p-5 w-1/2">
+        <div className= "flex flex-col p-5 w-1/2">
           <p>Enter the name and quantity of the new ingredient below.</p>
-          <form class="p-5" onSubmit={handleSubmit} className="newIngredientForm">
-            <label class="text-orange font-medium">
+          <form className="p-5 newIngredientForm" onSubmit={handleSubmit}>
+            <label className="text-orange font-medium">
               Name:
               <input
                 type="text"
@@ -52,7 +52,7 @@ function NewIngredientForm({ createIngredient }) {
                 onChange={handleInputChange}
               />
             </label>
-            <label class="text-orange font-medium">
+            <label className="text-orange font-medium">
               Quantity:
               <input
                 type="integer"
@@ -61,11 +61,11 @@ function NewIngredientForm({ createIngredient }) {
                 onChange={handleInputChange}
               />
             </label>
-            <button class="bg-green hover:bg-white border-lightGreen rounded-lg px-5 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Submit</button>
+            <button className="bg-green hover:bg-white border-lightGreen rounded-lg px-5 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Submit</button>
           </form>
         </div>
-        <div class="w-1/2 max-h-200 p-5 flex justify-content">
-          <img class="max-h-100 object-contain" src={process.env.PUBLIC_URL + '/Refrigerator.jpg'} alt="fridge" className="newImage" />
+        <div className="w-1/2 max-h-200 p-5 flex justify-content">
+          <img className="max-h-100 object-contain newImage" src={process.env.PUBLIC_URL + '/Refrigerator.jpg'} alt="fridge" />
         </div>
       </div>
     </div>

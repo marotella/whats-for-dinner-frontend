@@ -34,16 +34,16 @@ const RegisterForm = ({ registerUser }) => {
     }
   }
   return (
-    <div class="flex flex-col p-5">
-      <h1 class="p-5 font-medium fontsize text-3xl text-center">Register for What's for Dinner</h1>
-      <div class="flex flex-row">
-        <div class="w-1/2 md:w-1/2 p-5">
-          <p class="p-5">
+    <div className="flex flex-col p-5">
+      <h1 className="p-5 font-medium fontsize text-3xl text-center">Register for What's for Dinner</h1>
+      <div className="flex flex-row">
+        <div className="w-1/2 md:w-1/2 p-5">
+          <p className="p-5">
           Ready to embark on a culinary adventure? Join Whats for Dinner today and unleash your inner chef! 
           Enter your information below to create and account! Then you can get started creating your kitchen and finding new recipes to prepare.</p>
         {errorMessage && <p class="text-orange p-5">{errorMessage}</p>}
-        <form class="p-5 flex flex-col" onSubmit={handleSubmit}>
-          <label class="text-orange font-medium">
+        <form className="p-5 flex flex-col" onSubmit={handleSubmit}>
+          <label className="text-orange font-medium">
             Username:
             <input
               type="text"
@@ -52,7 +52,7 @@ const RegisterForm = ({ registerUser }) => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </label>
-          <label class="text-orange font-medium">
+          <label className="text-orange font-medium">
             Email:
             <input
               type="email"
@@ -61,7 +61,7 @@ const RegisterForm = ({ registerUser }) => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </label>
-          <label class="text-orange font-medium">
+          <label className="text-orange font-medium">
             Password:
             <input
               type="password"
@@ -70,7 +70,7 @@ const RegisterForm = ({ registerUser }) => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
-          <label class="text-orange font-medium">
+          <label className="text-orange font-medium">
             Confirm Password:
             <input
               type="password"
@@ -80,11 +80,11 @@ const RegisterForm = ({ registerUser }) => {
             />
           </label>
           <div className="">
-            <button class="bg-green hover:bg-white border-green rounded-lg px-10 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Register</button>
+            <button className="bg-green hover:bg-white border-green rounded-lg px-10 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Register</button>
           </div>
         </form>
       </div>
-      <div class="w-1/2 max-h-200 p-5 flex">
+      <div className="w-1/2 max-h-200 p-5 flex">
         <img src={process.env.PUBLIC_URL + '/Apron.jpg'} alt="apron" className="registerImage" />
       </div >
     </div >

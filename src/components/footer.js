@@ -17,7 +17,7 @@ const Footer = ({ logoutUser }) => {
                     </Link>
                     <img src={process.env.PUBLIC_URL + '/Icon.png'} alt="Icon" className="icon" style={{ margin: 'auto' }} />
                     <Link to="/" className="link">
-                        <span class="material-symbols-outlined">
+                        <span className="material-symbols-outlined">
                             home
                         </span>
                     </Link>
@@ -25,7 +25,7 @@ const Footer = ({ logoutUser }) => {
                         to="/user/logout"
                         onClick={logoutUser} className="link"
                     >
-                        <span class="material-symbols-outlined">
+                        <span className="material-symbols-outlined">
                             logout
                         </span>
                     </Link>

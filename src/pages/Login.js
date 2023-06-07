@@ -16,14 +16,14 @@ const LoginForm = ({ loginUser, getIngredientData }) => {
   }
   return (
     <div>
-      <h1 class="p-5 font-medium fontsize text-3xl text-center">Log in to What's for Dinner</h1>
-      <div class="flex flex-row">
-        <div class=" w-full md:w-1/2 flex flex-col w-1/2 p-5">
-          <p class="p-5">Enter your email and password below to login into your account.</p>
+      <h1 className="p-5 font-medium fontsize text-3xl text-center">Log in to What's for Dinner</h1>
+      <div className="flex flex-row">
+        <div className=" w-full md:w-1/2 flex flex-col w-1/2 p-5">
+          <p className="p-5">Enter your email and password below to login into your account.</p>
 
-          <form class="p-5" onSubmit={handleSubmit}>
+          <form className="p-5" onSubmit={handleSubmit}>
             <label>
-              <p class="text-orange font-medium">Username: </p>
+              <p className="text-orange font-medium">Username: </p>
               <input
                 type="text"
                 placeholder="username"
@@ -32,7 +32,7 @@ const LoginForm = ({ loginUser, getIngredientData }) => {
               />
             </label>
             <label>
-              <p class="text-orange font-medium">Email: </p>
+              <p className="text-orange font-medium">Email: </p>
               <input
                 type="email"
                 placeholder="Email"
@@ -41,7 +41,7 @@ const LoginForm = ({ loginUser, getIngredientData }) => {
               />
             </label>
             <label>
-              <p class="text-orange font-medium">Password: </p>
+              <p className="text-orange font-medium">Password: </p>
               <input
                 type="password"
                 placeholder="Password"
@@ -50,12 +50,12 @@ const LoginForm = ({ loginUser, getIngredientData }) => {
               />
             </label>
             <div>
-              <button class="bg-green hover:bg-white border-lightGreen rounded-lg px-5 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Log In</button>
+              <button className="bg-green hover:bg-white border-lightGreen rounded-lg px-5 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Log In</button>
             </div>
           </form>
         </div>
-        <div class="w-1/2 max-h-200 p-5 flex justify-content">
-          <img class="max-h-100 object-contain" src={process.env.PUBLIC_URL + '/Aprontie.jpg'} alt="apron-tie" className="loginImage" />
+        <div className="w-1/2 max-h-200 p-5 flex justify-content">
+          <img className="max-h-100 object-contain loginImage" src={process.env.PUBLIC_URL + '/Aprontie.jpg'} alt="apron-tie" />
         </div>
       </div>
     </div>

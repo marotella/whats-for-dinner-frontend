@@ -7,7 +7,7 @@ const NavBar = ({ logoutUser }) => {
         <header class="w-full"> 
             <div>
                 <img src={process.env.PUBLIC_URL + '/Title.png'} alt="Title" className="title" style={{ margin: 'auto' }} />
-                <nav class="flex flex-wrap justify-between items-center p-2">
+                <nav className="flex flex-wrap justify-between items-center p-2">
                     <Link to="/" className="text-white hover:text-orange flex justify-center items-center">
                         <span class="material-symbols-outlined">
                             home
@@ -43,7 +43,7 @@ const NavBar = ({ logoutUser }) => {
                         to="/user/logout"
                         onClick={logoutUser} className="text-white hover:text-orange flex justify-center items-center hover:underline"
                     >
-                        <span class="material-symbols-outlined">
+                        <span className="material-symbols-outlined">
                             logout
                         </span>
                     </Link>

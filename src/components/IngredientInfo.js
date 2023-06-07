@@ -16,12 +16,12 @@ const IngredientInfo = ({ ingredient, deleteIngredient, updateIngredient }) => {
         <h4>{ingredient.ingredient}</h4>
       </Link>
       <img className="ingredientThumb" src={imageSource} alt={ingredient.ingredient} onError={(e) => e.target.src = fallbackImage} />
-      <div class="flex items-center justify-between">
+      <div className="flex items-center justify-between">
         <button onClick={() => handleDelete(ingredient.id)} className="flex justify-center p-2 text-orange hover:text-white hover:bg-orange m-1"><span class="material-symbols-outlined">
           delete
         </span></button>
         <Link to={`/ingredients/edit/${ingredient.id}`}>
-          <button class="flex justify-center p-2 m-1 text-orange hover:text-white hover:bg-orange"><span class="material-symbols-outlined">
+          <button className="flex justify-center p-2 m-1 text-orange hover:text-white hover:bg-orange"><span className="material-symbols-outlined">
             edit
           </span></button>
         </Link>

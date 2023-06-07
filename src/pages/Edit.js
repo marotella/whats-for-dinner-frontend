@@ -37,12 +37,12 @@ function UpdateIngredientForm({ ingredients, updateIngredient }) {
   const fallbackImage = process.env.PUBLIC_URL + '/Fork.png';
 
   return (
-    <div class="flex justify-center flex-col">
-      <h2 class="p-5 font-medium fontsize text-2xl text-center">Edit Ingredient</h2>
-      <div class="flex flex-row">
-        <div class="flex flex-col p-5 w-1/2">
-          <form class="p-5" onSubmit={handleSubmit}>
-            <label class="text-orange font-medium">
+    <div className="flex justify-center flex-col">
+      <h2 className="p-5 font-medium fontsize text-2xl text-center">Edit Ingredient</h2>
+      <div className="flex flex-row">
+        <div className="flex flex-col p-5 w-1/2">
+          <form className="p-5" onSubmit={handleSubmit}>
+            <label className="text-orange font-medium">
               Ingredient:
               <input
                 type="text"
@@ -52,7 +52,7 @@ function UpdateIngredientForm({ ingredients, updateIngredient }) {
                 placeholder={ingredient.ingredient}
               />
             </label>
-            <label class="text-orange font-medium" >
+            <label className="text-orange font-medium" >
               Quantity:
               <input
                 type="integer"
@@ -62,7 +62,7 @@ function UpdateIngredientForm({ ingredients, updateIngredient }) {
                 placeholder={ingredient.quantity}
               />
             </label>
-            <button class="bg-green hover:bg-white border-lightGreen rounded-lg px-5 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Update</button>
+            <button className="bg-green hover:bg-white border-lightGreen rounded-lg px-5 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Update</button>
           </form>
         </div>
         <div>

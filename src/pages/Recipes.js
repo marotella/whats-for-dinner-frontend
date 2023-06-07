@@ -67,7 +67,7 @@ const RecipeSearchForm = ({ ingredients, searchRecipes }) => {
                                                 checked={selectedIngredients.includes(ingredient.ingredient)}
                                                 onChange={handleIngredientChange}
                                             />
-                                            <p class="p-4">{ingredient.ingredient}</p>
+                                            <p className="p-4">{ingredient.ingredient}</p>
                                         </div>
                                         <div className="ingredientSelection flex items-center">
                                             {/* <img

@@ -10,11 +10,11 @@ const Ingredients = ({ ingredients, deleteIngredient }) => {
     const loaded = () => {
         return (
             <div className="new m-10">
-                <h3 class="flex justify-center text-xl text-medium">Welcome to your kitchen! </h3>
+                <h3 className="flex justify-center text-xl text-medium">Welcome to your kitchen! </h3>
                 <div class="flex flex-row p-5">
-                    <h2 class="w-3/4"> Here you can view the contents of your kitchen. You can also view the details for each of your ingredients, along with update and delete items as you use them to prepare meals.</h2>
+                    <h2 className="w-3/4"> Here you can view the contents of your kitchen. You can also view the details for each of your ingredients, along with update and delete items as you use them to prepare meals.</h2>
                     <Link to={`/ingredients/new`} class="flex w-1/4 text-white bg-green text-2xl  justify-center">
-                        <button class="flex items-center">New <span class="material-symbols-outlined text-4xl justify-center p-2">
+                        <button className="flex items-center">New <span className="material-symbols-outlined text-4xl justify-center p-2">
                             add_box
                         </span></button>
                     </Link>

@@ -7,7 +7,7 @@ function About() {
             <div className="flex flex-row m-5">
                 <div>
                     <div className="p-5">
-                        <img src={process.env.PUBLIC_URL + '/cuttingBoard.jpg'} alt="cuttingboard" className="about2" />
+                        <img src={process.env.PUBLIC_URL + '/cuttingboard.jpg'} alt="cutting-board" className="about2" />
                     </div>
                 </div>
                 <div className="flex flex-col text-white p-5 bg-gradient-to-b from-green to-lightGreen m-5 items-left justify-center">

@@ -85,7 +85,7 @@ const RegisterForm = ({ registerUser }) => {
         </form>
       </div>
       <div className="w-1/2 max-h-200 p-5 flex">
-        <img src={process.env.PUBLIC_URL + '/Apron.jpg'} alt="apron" className="registerImage" />
+        <img src={process.env.PUBLIC_URL + '/apron.jpg'} alt="apron" className="registerImage" />
       </div >
     </div >
     </div >

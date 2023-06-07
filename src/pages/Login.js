@@ -55,7 +55,7 @@ const LoginForm = ({ loginUser, getIngredientData }) => {
           </form>
         </div>
         <div className="w-1/2 max-h-200 p-5 flex justify-content">
-          <img className="max-h-100 object-contain loginImage" src={process.env.PUBLIC_URL + '/Aprontie.jpg'} alt="apron-tie" />
+          <img className="max-h-100 object-contain loginImage" src={process.env.PUBLIC_URL + '/ApronTie.jpg'} alt="apron-tie" />
         </div>
       </div>
     </div>

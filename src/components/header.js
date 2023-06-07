@@ -9,7 +9,7 @@ const NavBar = ({ logoutUser }) => {
                 <img src={process.env.PUBLIC_URL + '/Title.png'} alt="Title" className="title" style={{ margin: 'auto' }} />
                 <nav className="flex flex-wrap justify-between items-center p-2">
                     <Link to="/" className="text-white hover:text-orange flex justify-center items-center">
-                        <span class="material-symbols-outlined">
+                        <span className="material-symbols-outlined">
                             home
                         </span>
                     </Link>

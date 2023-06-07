@@ -19,6 +19,7 @@ function App() {
   console.log(baseUrl)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [ingredients, setIngredients] = useState([])
+
   const getIngredientData = async () => {
     try {
       const response = await fetch(`${baseUrl}/api/ingredients`, {
@@ -113,6 +114,7 @@ function App() {
       if (response.ok) {
         const data = await response.json()
         console.log(data)
+        setIsLoggedIn(true)
         return data;
       } else {
         throw await response.json();
@@ -168,23 +170,41 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header logoutUser={logoutUser} />
+        <Header isloggedIn={isLoggedIn} logoutUser={logoutUser} />
         <Routes>
-          <Route path="/" element = {<Home registerUser={registerUser} loginUser={loginUser}/>}/>
-          <Route path="/ingredients/new" element={<NewIngredientForm createIngredient={createIngredient} />} />
-          <Route path="/ingredients/edit/:id" element={<UpdateIngredientForm ingredients={ingredients} updateIngredient={updateIngredient} />} />
-          <Route path="/ingredients/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} deleteIngredient={deleteIngredient} updateIngredient={updateIngredient} />} />
-          <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} baseUrl={baseUrl} deleteIngredient={deleteIngredient} updateIngredient={updateIngredient} />} />
-          <Route exact path="/user/login" element={<LoginForm loginUser={loginUser} getIngredientData={getIngredientData} baseUrl={baseUrl} />} />
-          <Route exact path="/user/register" element={<RegisterForm registerUser={registerUser} getIngredientData={getIngredientData} baseUrl={baseUrl} />} />
+          {isLoggedIn ? (
+            <>
+              {/* Routes accessible when logged in */}
+              <Route path="/" element={<Home />} />
+              <Route path="/ingredients/new" element={<NewIngredientForm createIngredient={createIngredient} />} />
+              <Route path="/ingredients/edit/:id" element={<UpdateIngredientForm ingredients={ingredients} updateIngredient={updateIngredient} />} />
+              <Route path="/ingredients/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} deleteIngredient={deleteIngredient} updateIngredient={updateIngredient} />} />
+              <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} baseUrl={baseUrl} deleteIngredient={deleteIngredient} updateIngredient={updateIngredient} />} />
+              <Route exact path="/user/logout" element={<Header logoutUser={logoutUser} />} />
+              <Route exact path="/ingredients/recipe/:id" element={<RecipeDetails baseUrl={baseUrl} />} />
+              <Route exact path="/ingredients/recipes" element={<RecipeSearchForm ingredients={ingredients} baseUrl={baseUrl} />} />
+              {/* Other routes for logged-in users */}
+            </>
+          ) : (
+            <>
+              {/* Routes accessible when not logged in */}
+              <Route exact path="/user/login" element={<LoginForm loginUser={loginUser} getIngredientData={getIngredientData} baseUrl={baseUrl} />} />
+              <Route exact path="/user/register" element={<RegisterForm registerUser={registerUser} getIngredientData={getIngredientData} baseUrl={baseUrl} />} />
+              {/* Other routes for non-logged-in users */}
+            </>
+          )}
+          <Route path="/" element={<Home registerUser={registerUser} loginUser={loginUser} />} />
           <Route exact path="/ingredients/recipe/:id" element={<RecipeDetails baseUrl={baseUrl} />} />
           <Route exact path="/ingredients/recipes" element={<RecipeSearchForm ingredients={ingredients} baseUrl={baseUrl} />} />
           <Route exact path="/about" element={<About baseUrl={baseUrl} />} />
         </Routes>
+
       </div>
       <Footer />
 
     </Router>
   );
 }
+
+
 export default App;

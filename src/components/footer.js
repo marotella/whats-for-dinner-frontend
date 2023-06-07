@@ -22,7 +22,7 @@ const Footer = ({ logoutUser }) => {
                         </span>
                     </Link>
                     <Link
-                        to="/user/logout"
+                        to="/"
                         onClick={logoutUser} className="link"
                     >
                         <span className="material-symbols-outlined">

@@ -15,7 +15,7 @@ import RecipeDetails from "./pages/RecipeInfo"
 import Home from "./pages/Home"
 import About from "./pages/About"
 function App() {
-  const URL = "http://localhost:8000/"
+  const URL = process.env.REACT_APP_BASE_URL
   console.log(URL)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [ingredients, setIngredients] = useState([])

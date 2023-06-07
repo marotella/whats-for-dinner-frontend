@@ -176,7 +176,7 @@ function App() {
           <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} URL={URL} deleteIngredient={deleteIngredient} updateIngredient={updateIngredient} />} />
           <Route exact path="/user/login" element={<LoginForm loginUser={loginUser} getIngredientData={getIngredientData} URL={URL} />} />
           <Route exact path="/user/register" element={<RegisterForm registerUser={registerUser} getIngredientData={getIngredientData} URL={URL} />} />
-          <Route exact path="/ingredients/recipe/:id" element={<RecipeDetails />} />
+          <Route exact path="/ingredients/recipe/:id" element={<RecipeDetails URL={URL} />} />
           <Route exact path="/ingredients/recipes" element={<RecipeSearchForm ingredients={ingredients} URL={URL} />} />
           <Route exact path="/about" element={<About URL={URL} />} />
         </Routes>

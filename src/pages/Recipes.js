@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"
 
-const RecipeSearchForm = ({ ingredients, searchRecipes }) => {
+const RecipeSearchForm = ({ ingredients, searchRecipes, URL }) => {
     const [selectedIngredients, setSelectedIngredients] = useState([]);
     const [recipes, setRecipes] = useState([]);
     const [searchError, setSearchError] = useState(false);
@@ -19,7 +19,7 @@ const RecipeSearchForm = ({ ingredients, searchRecipes }) => {
 
     const handleRecipeSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:8000/ingredients/api/search', {
+        fetch(`${URL}/ingredients/api/search`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ const RecipeSearchForm = ({ ingredients, searchRecipes }) => {
                                                 checked={selectedIngredients.includes(ingredient.ingredient)}
                                                 onChange={handleIngredientChange}
                                             />
-                                            <p className="p-4">{ingredient.ingredient}</p>
+                                            <p class="p-4">{ingredient.ingredient}</p>
                                         </div>
                                         <div className="ingredientSelection flex items-center">
                                             {/* <img

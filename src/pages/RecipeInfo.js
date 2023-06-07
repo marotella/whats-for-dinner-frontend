@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-const RecipeDetails = () => {
+const RecipeDetails = ({URL}) => {
     const { id } = useParams()
     const [recipeInfo, setRecipeInfo] = useState(null)
     useEffect(() => {
-        fetch(`http://localhost:8000/ingredients/api/recipes/${id}`)
+        fetch(`${URL}/ingredients/api/recipes/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 setRecipeInfo(data)

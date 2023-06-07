@@ -22,6 +22,7 @@ function App() {
   const getIngredientData = async () => {
     try {
       const response = await fetch(`${URL}/api/ingredients`, {
+        method: "GET",
         credentials: "include"
       });
       if (!response.ok) {

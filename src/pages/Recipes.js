@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"
 
-const RecipeSearchForm = ({ ingredients, searchRecipes, URL }) => {
+const RecipeSearchForm = ({ ingredients, searchRecipes, baseUrl}) => {
     const [selectedIngredients, setSelectedIngredients] = useState([]);
     const [recipes, setRecipes] = useState([]);
     const [searchError, setSearchError] = useState(false);
@@ -19,7 +19,7 @@ const RecipeSearchForm = ({ ingredients, searchRecipes, URL }) => {
 
     const handleRecipeSubmit = (event) => {
         event.preventDefault();
-        fetch(`${URL}/ingredients/api/search`, {
+        fetch(`${baseUrl}/ingredients/api/search`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

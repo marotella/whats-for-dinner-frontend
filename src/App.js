@@ -15,13 +15,13 @@ import RecipeDetails from "./pages/RecipeInfo"
 import Home from "./pages/Home"
 import About from "./pages/About"
 function App() {
-  const URL = process.env.REACT_APP_BASE_URL
-  console.log(URL)
+  const baseUrl = process.env.REACT_APP_BASE_URL
+  console.log(baseUrl)
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [ingredients, setIngredients] = useState([])
   const getIngredientData = async () => {
     try {
-      const response = await fetch(`${URL}/api/ingredients`, {
+      const response = await fetch(`${baseUrl}/api/ingredients`, {
         method: "GET",
         credentials: "include"
       });
@@ -45,7 +45,7 @@ function App() {
   const createIngredient = async (createdIngredient) => {
     try {
       console.log(createdIngredient)
-      const response = await fetch(`${URL}/api/ingredients`, {
+      const response = await fetch(`${baseUrl}/api/ingredients`, {
         method: "POST",
         body: JSON.stringify(createdIngredient),
         headers: {
@@ -65,7 +65,7 @@ function App() {
   const updateIngredient = async (id, updatedIngredient) => {
     try {
       console.log(updatedIngredient)
-      const response = await fetch(`${URL}/api/ingredients/${id}`, {
+      const response = await fetch(`${baseUrl}/api/ingredients/${id}`, {
         method: "PUT",
         body: JSON.stringify(updatedIngredient),
         headers: {
@@ -85,7 +85,7 @@ function App() {
   //DELETE - INGREDIENTS
   const deleteIngredient = async (id) => {
     try {
-      const response = await fetch(`${URL}/api/ingredients/${id}`, {
+      const response = await fetch(`${baseUrl}/api/ingredients/${id}`, {
         method: "DELETE",
         credentials: "include"
       });
@@ -102,7 +102,7 @@ function App() {
   const registerUser = async (username, email, password) => {
     try {
       const registeredUser = { username: username, email: email, password: password }
-      const response = await fetch(`${URL}/api/users/register`, {
+      const response = await fetch(`${baseUrl}/api/users/register`, {
         method: "POST",
         headers: {
           'Content-Type': "application/json"
@@ -126,7 +126,7 @@ function App() {
   const loginUser = async (username, email, password) => {
     try {
       const loggedUser = { username: username, email: email, password: password }
-      const response = await fetch(`${URL}/api/users/login`, {
+      const response = await fetch(`${baseUrl}/api/users/login`, {
         method: "POST",
         headers: {
           'Content-Type': "application/json"
@@ -149,7 +149,7 @@ function App() {
 
   //LOGOUT - ACCOUNT
   const logoutUser = () => {
-    fetch(`${URL}/api/users/logout`, {
+    fetch(`${baseUrl}/api/users/logout`, {
       method: "GET",
       credentials: "include",
     })
@@ -174,12 +174,12 @@ function App() {
           <Route path="/ingredients/new" element={<NewIngredientForm createIngredient={createIngredient} />} />
           <Route path="/ingredients/edit/:id" element={<UpdateIngredientForm ingredients={ingredients} updateIngredient={updateIngredient} />} />
           <Route path="/ingredients/:id" element={<Ingredient ingredients={ingredients} getIngredientData={getIngredientData} deleteIngredient={deleteIngredient} updateIngredient={updateIngredient} />} />
-          <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} URL={URL} deleteIngredient={deleteIngredient} updateIngredient={updateIngredient} />} />
-          <Route exact path="/user/login" element={<LoginForm loginUser={loginUser} getIngredientData={getIngredientData} URL={URL} />} />
-          <Route exact path="/user/register" element={<RegisterForm registerUser={registerUser} getIngredientData={getIngredientData} URL={URL} />} />
-          <Route exact path="/ingredients/recipe/:id" element={<RecipeDetails URL={URL} />} />
-          <Route exact path="/ingredients/recipes" element={<RecipeSearchForm ingredients={ingredients} URL={URL} />} />
-          <Route exact path="/about" element={<About URL={URL} />} />
+          <Route exact path="/ingredients" element={<Ingredients ingredients={ingredients} baseUrl={baseUrl} deleteIngredient={deleteIngredient} updateIngredient={updateIngredient} />} />
+          <Route exact path="/user/login" element={<LoginForm loginUser={loginUser} getIngredientData={getIngredientData} baseUrl={baseUrl} />} />
+          <Route exact path="/user/register" element={<RegisterForm registerUser={registerUser} getIngredientData={getIngredientData} baseUrl={baseUrl} />} />
+          <Route exact path="/ingredients/recipe/:id" element={<RecipeDetails baseUrl={baseUrl} />} />
+          <Route exact path="/ingredients/recipes" element={<RecipeSearchForm ingredients={ingredients} baseUrl={baseUrl} />} />
+          <Route exact path="/about" element={<About baseUrl={baseUrl} />} />
         </Routes>
       </div>
       <Footer />

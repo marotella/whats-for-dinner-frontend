@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useParams } from "react-router-dom"
 import IngredientInfo from "../components/IngredientInfo"
 
-const Ingredients = ({ ingredients, deleteIngredient }) => {
+const Ingredients = ({ ingredients, deleteIngredient, baseUrl }) => {
     console.log(ingredients) //confirms that data is bieng passesd
     const { id } = useParams();
 

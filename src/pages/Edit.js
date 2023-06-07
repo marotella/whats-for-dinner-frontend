@@ -31,7 +31,7 @@ function UpdateIngredientForm({ ingredients, updateIngredient }) {
     console.log("Ingredient is undefined")
     return null
   }
-  console.log("Inbgredient updated", ingredient)
+  console.log("Ingredient updated", ingredient)
 
   const imageSource = `https://www.themealdb.com/images/ingredients/${ingredient.ingredient}.png`;
   const fallbackImage = process.env.PUBLIC_URL + '/Fork.png';

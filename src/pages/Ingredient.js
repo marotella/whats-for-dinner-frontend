@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
-const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
+const Ingredient = ({ ingredients, getIngredientData, deleteIngredient, baseUrl }) => {
   //use the param to match the id in the database
   const { id } = useParams();
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient }) => {
   const ingredient = ingredients.find(ingredient => ingredient.id === parseInt(id))
   useEffect(() => {
     // Call the getIngredientData function here to fetch the data
-    getIngredientData();
+    getIngredientData(baseUrl);
   }, []);
   console.log(ingredients)
   console.log(ingredient)

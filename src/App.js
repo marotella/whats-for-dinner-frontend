@@ -21,7 +21,7 @@ function App() {
   const [ingredients, setIngredients] = useState([])
   const getIngredientData = async () => {
     try {
-      const response = await fetch(`${URL}api/ingredients`, {
+      const response = await fetch(`${URL}/api/ingredients`, {
         credentials: "include"
       });
       if (!response.ok) {
@@ -44,7 +44,7 @@ function App() {
   const createIngredient = async (createdIngredient) => {
     try {
       console.log(createdIngredient)
-      const response = await fetch(`${URL}api/ingredients`, {
+      const response = await fetch(`${URL}/api/ingredients`, {
         method: "POST",
         body: JSON.stringify(createdIngredient),
         headers: {
@@ -64,7 +64,7 @@ function App() {
   const updateIngredient = async (id, updatedIngredient) => {
     try {
       console.log(updatedIngredient)
-      const response = await fetch(`${URL}api/ingredients/${id}`, {
+      const response = await fetch(`${URL}/api/ingredients/${id}`, {
         method: "PUT",
         body: JSON.stringify(updatedIngredient),
         headers: {
@@ -84,7 +84,7 @@ function App() {
   //DELETE - INGREDIENTS
   const deleteIngredient = async (id) => {
     try {
-      const response = await fetch(`${URL}api/ingredients/${id}`, {
+      const response = await fetch(`${URL}/api/ingredients/${id}`, {
         method: "DELETE",
         credentials: "include"
       });
@@ -101,7 +101,7 @@ function App() {
   const registerUser = async (username, email, password) => {
     try {
       const registeredUser = { username: username, email: email, password: password }
-      const response = await fetch(`${URL}api/users/register`, {
+      const response = await fetch(`${URL}/api/users/register`, {
         method: "POST",
         headers: {
           'Content-Type': "application/json"
@@ -125,7 +125,7 @@ function App() {
   const loginUser = async (username, email, password) => {
     try {
       const loggedUser = { username: username, email: email, password: password }
-      const response = await fetch(`${URL}api/users/login`, {
+      const response = await fetch(`${URL}/api/users/login`, {
         method: "POST",
         headers: {
           'Content-Type': "application/json"
@@ -148,7 +148,7 @@ function App() {
 
   //LOGOUT - ACCOUNT
   const logoutUser = () => {
-    fetch(`${URL}api/users/logout`, {
+    fetch(`${URL}/api/users/logout`, {
       method: "GET",
       credentials: "include",
     })

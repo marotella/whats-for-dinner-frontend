@@ -4,7 +4,7 @@ function About() {
     return (
         <div className="flex flex-col justify-center items-center w-full">
             <h1 className="text-2xl font-medium text-orange mt-5">About Whats for Dinner</h1>
-            <div className="flex flex-row m-5">
+            <div className="flex flex-col md:flex-row m-5">
                 <div>
                     <div className="p-5">
                         <img src={process.env.PUBLIC_URL + '/cuttingboard.jpg'} alt="cutting-board" className="about2" />
@@ -27,24 +27,24 @@ function About() {
                 </div>
 
             </div>
-            <div className="flex flex-row m-5">
-                <div className="flex flex-row m-5 p-5 justify-center">
+            <div className="flex flex-col md:flex-row m-5">
+                <div className="flex flex-col md:flex-row m-5 p-5 justify-center">
 
-                    <p className="flex flex-col justify-center text-white items-left bg-gradient-to-b from-green to-lightGreen p-5">
+                    <div className="flex flex-col justify-center text-white items-left bg-gradient-to-b from-green to-lightGreen p-5">
                        <b className="flex text-left text-xl">Here's what WFD offers:</b> 
                         <br />
-                        <b>Ingredient Inventory: Keep Track of What You Have</b> 
+                        <p><b>Ingredient Inventory: Keep Track of What You Have</b> 
                         <br/>
-                        Never again will you buy duplicate ingredients or forget what's hiding in the back of your pantry. Or have great food go to waste. WFD allows you to easily manage and track your ingredient inventory. Know at a glance what you have and what you need, and reduce food waste.
-                        <br />
+                        Never again will you buy duplicate ingredients or forget what's hiding in the back of your pantry. Or have great food go to waste. WFD allows you to easily manage and track your ingredient inventory. Know at a glance what you have and what you need, and reduce food waste.</p>
+                        <br/>
                      
-                        <b>Personalized Recipe Recommendations: Discover New Tastes</b><br/>
-                        Tired of cooking the same old dishes? Whats for Dinner allows you to use your the ingredients you already have and provides personalized recipe recommendations tailored to your available ingredients. Prepare to be amazed as WFD suggests mouthwatering recipes that will ignite your culinary creativity and introduce you to new flavors.
-                        <br />
+                        <p><b>Personalized Recipe Recommendations: Discover New Tastes</b><br/>
+                        Tired of cooking the same old dishes? Whats for Dinner allows you to use your the ingredients you already have and provides personalized recipe recommendations tailored to your available ingredients. Prepare to be amazed as WFD suggests mouthwatering recipes that will ignite your culinary creativity and introduce you to new flavors.</p>
+                        <br/>
                 
-                        <b>Smart Search: Find Recipes in an Instant
-                        Looking for a specific recipe?</b> <br/>WFD's search functionality lets you quickly find recipes based on ingredients you already have. No more endless scrolling through generic search results or having to purchase tons of new ingredients to make a great meal. WFD streamlines the process, making it effortless to find the perfect recipe for any occasion.
-                    </p>
+                        <p><b>Smart Search: Find Recipes in an Instant
+                        Looking for a specific recipe?</b> <br/>WFD's search functionality lets you quickly find recipes based on ingredients you already have. No more endless scrolling through generic search results or having to purchase tons of new ingredients to make a great meal. WFD streamlines the process, making it effortless to find the perfect recipe for any occasion. </p>
+                    </div>
                     <div className="p-5">
                         <img src={process.env.PUBLIC_URL + '/shakshuka.jpg'} alt="shakshuka" className="about1" />
                     </div>

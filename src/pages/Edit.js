@@ -37,12 +37,13 @@ function UpdateIngredientForm({ ingredients, updateIngredient }) {
   const fallbackImage = process.env.PUBLIC_URL + '/Fork.png';
 
   return (
-    <div className="flex justify-center flex-col">
-      <h2 className="p-5 font-medium fontsize text-2xl text-center">Edit Ingredient</h2>
-      <div className="flex flex-row">
+    <div className="flex justify-center">
+      <div className="max-w-4xl w-full p-5">
+      <h2 className="p-5 font-medium text-2xl text-center">Edit Ingredient</h2>
+      <div className="flex flex-col lg:flex-row">
         <div className="flex flex-col p-5 w-1/2">
-          <form className="p-5" onSubmit={handleSubmit}>
-            <label className="text-orange font-medium">
+          <form className="flex p-5 flex-col" onSubmit={handleSubmit}>
+            <label className="text-orange font-medium mt-4">
               Ingredient:
               <input
                 type="text"
@@ -50,9 +51,10 @@ function UpdateIngredientForm({ ingredients, updateIngredient }) {
                 value={updatedIngredient.ingredient || ""}
                 onChange={handleChange}
                 placeholder={ingredient.ingredient}
+                className="mt-2 border rounded-lg p-2"
               />
             </label>
-            <label className="text-orange font-medium" >
+            <label className="text-orange font-medium mt-4" >
               Quantity:
               <input
                 type="integer"
@@ -60,14 +62,16 @@ function UpdateIngredientForm({ ingredients, updateIngredient }) {
                 value={updatedIngredient.quantity || ""}
                 onChange={handleChange}
                 placeholder={ingredient.quantity}
+                className="mt-2 border rounded-lg p-2"
               />
             </label>
-            <button className="bg-green hover:bg-white border-lightGreen rounded-lg px-5 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Update</button>
+            <button className="bg-green hover:bg-white border-lightGreen rounded-lg px-5 mt-4 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Update</button>
           </form>
         </div>
-        <div>
+        <div className="lg:w-1/2 flex justify-center"> 
           <img className="ingredientShow" src={imageSource} alt={ingredient.ingredient} onError={(e) => e.target.src = fallbackImage} />
         </div>
+      </div>
       </div>
     </div >
 

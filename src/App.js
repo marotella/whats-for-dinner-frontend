@@ -114,7 +114,8 @@ function App() {
       if (response.ok) {
         const data = await response.json()
         console.log(data)
-        setIsLoggedIn(true)
+        setIsLoggedIn(data.data.email)
+        console.log(isLoggedIn)
         return data;
       } else {
         throw await response.json();
@@ -139,7 +140,7 @@ function App() {
       if (response.ok) {
         const data = await response.json()
         console.log(data)
-        setIsLoggedIn(true);
+        setIsLoggedIn(data.data.email);
         console.log("Sucessfully logged in!")
       } else {
         throw new Error("login failed")

@@ -90,7 +90,7 @@ const RecipeSearchForm = ({ ingredients, searchRecipes, baseUrl}) => {
                             </div>
                         </div>
                         <div className="w-full items-center p-2">
-                            <h3 className="text-center text-xl p-1">Search Results</h3>
+                            {/* <h3 className="text-center text-xl p-1">Search Results</h3> */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4 flex justify-center">
                                 {recipes && (recipes.length === 0 || recipes === null) ? (
                                     <h3>
@@ -99,7 +99,7 @@ const RecipeSearchForm = ({ ingredients, searchRecipes, baseUrl}) => {
 
                                 ) : (
                                     recipes.map((recipe) => (
-                                        <div className="recipeIcon flex flex-col items-center border border-lightGreen border-2 bg-green text-white" key={recipe.idMeal}>
+                                        <div className="recipeIcon flex flex-col drop-shadow-xl items-center border border-lightGreen border-2 bg-green text-white" key={recipe.idMeal}>
                                             <h3 className="text-l font-medium">Recipe Card</h3>
                                            <div className="flex flex-row justify-center items-center">
                                             <Link to={`/ingredients/recipe/${recipe.idMeal}`} className="link"

@@ -32,7 +32,10 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient, baseUrl 
     }
     //Displays ingredient information and buttons that perform update and delete
     return (
+      <div>
+        <h3 className="flex justify-center m-4 font-medium text-xl">View, edit, and delete ingredients from your kitchen.</h3>
       <section className="showSection drop-shadow-xl">
+
         <div className="ingredientInfo">
           <div className="font-medium p-5">
             <h3 className="p-2">Ingredient: {ingredient.ingredient}</h3>
@@ -55,6 +58,7 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient, baseUrl 
                 </span>  Back </Link>
             </div>
       </section >
+      </div>
     );
   };
 

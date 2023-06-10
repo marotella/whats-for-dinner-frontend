@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# What's for Dinner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Link:
 
-## Available Scripts
+What's For Dinner, is an application which allows a user to track what ingredients they have in thier kitchen, and find recipes that they can make using those ingredients. The application works to reduce food waste, ease deicsion making around meal times, and discover new recipes.
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+- Flask
+- SQLite/Postgresql
+- React
+- Tailwind
+- Flexbox
+- Heroku 
+The application also uses data from an external API: https://www.themealdb.com/api.php
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation:
+- Necessary to install: Flask, React, Tailwind, Heroku, Peewee, SQLite, CORS, Dotenv, Gunicorn
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Approach
+- Developed full CRUD operations using Flask.
+- Fetched data from external API and reviewed data structure using Postman
+- Developed frontend components and connected to the backend.
+- Implemented user authorization, by using state in React.
+- Included a third party API - https://www.themealdb.com/api.php for search and data images
+- Deployed online and accessible to the public via Heroku
+- Used Trello throughout the process for project management.
 
-### `npm run build`
+## Models
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ingredients:
+ - ingredient: String
+ - quantity: integer
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Users:
+ - username: String
+ - email: email
+ - password: String
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Routes
 
-### `npm run eject`
+User Routes:
+Register: users/register - POST
+Login: users/login - POST
+Logout: users/logout - GET
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ingredient Routes:
+Index: /ingredients - GET
+Show: /ingredients/<id> - GET
+Update: /ingredients/<id> - PUT
+Create: /ingredients - POST
+Delete: /ingredients/<id> - DELETE
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Recipe Routes:
+Search: /ingredients/api/search - POST
+Show: /ingredients/api/recipes/<recipe_id> - GET
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## User Stories
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This application was designed for folks who enjoy cooking, want to reduce food waste, but may not have time or energy to find new recipes. The user to can mantain a database of their kitchen ingredients. The can view, edit, and update items in their kitchen. They can then use the ingredients they have to search a database of recipes that use those ingredients. They can view the full recipe and instructions on how to make the dish.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Initial Wireframe
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Final Design
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Next Steps:
 
-### Making a Progressive Web App
+- Continue to modify the code for mobile rendering.
+- Implement a one to many relationship to allow for multiple users.
+- Add in a shopping list feature 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

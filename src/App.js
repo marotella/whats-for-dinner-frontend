@@ -167,11 +167,12 @@ function App() {
         console.log(data)
         setIsLoggedIn(data.data.email);
         console.log("Sucessfully logged in!")
+        return data
       } else {
-        throw new Error("login failed")
+        throw await response.json();
       }
     } catch (error) {
-      console.error(error)
+      throw error
     }
   }
 

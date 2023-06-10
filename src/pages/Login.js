@@ -14,7 +14,6 @@ const LoginForm = ({ loginUser, getIngredientData }) => {
       const response = await loginUser(username, email, password)
       if (response.status === 200) {
         navigate("/ingredients")
-        getIngredientData()
     } else {
       const errorMessageResponse = await response.json()
       if (errorMessageResponse.message === "Your email and/or password is incorrect. Please try again."){

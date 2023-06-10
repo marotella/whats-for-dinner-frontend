@@ -30,7 +30,7 @@ const LoginForm = ({ loginUser, getIngredientData }) => {
   return (
     <div>
       <h1 className="p-5 font-medium fontsize text-3xl text-center">Log in to What's for Dinner</h1>
-      <div className="flex flex-row">
+      <div className="flex flex-col md:flex-row">
         <div className=" w-full md:w-1/2 flex flex-col w-1/2 p-5">
           <p className="p-5">Enter your email and password below to login into your account.</p>
           {errorMessage && <p className="text-orange p-5">{errorMessage}</p>}

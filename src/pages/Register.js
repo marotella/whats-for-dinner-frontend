@@ -34,10 +34,10 @@ const RegisterForm = ({ registerUser }) => {
     }
   }
   return (
-    <div className="flex flex-col p-5">
+    <div className="flex flex-col items-center justify-center">
       <h1 className="p-5 font-medium fontsize text-3xl text-center">Register for What's for Dinner</h1>
-      <div className="flex flex-row">
-        <div className="w-1/2 md:w-1/2 p-5">
+      <div className="flex flex-col md:flex-row">
+        <div className="md:w-1/2 p-5">
           <p className="p-5">
           Ready to embark on a culinary adventure? Join Whats for Dinner today and unleash your inner chef! 
           Enter your information below to create and account! Then you can get started creating your kitchen and finding new recipes to prepare.</p>
@@ -84,7 +84,7 @@ const RegisterForm = ({ registerUser }) => {
           </div>
         </form>
       </div>
-      <div className="w-1/2 max-h-200 p-5 flex">
+      <div className="md:w-1/3 md:max-h-200 p-5 flex">
         <img src={process.env.PUBLIC_URL + '/apron.jpg'} alt="apron" className="registerImage" />
       </div >
     </div >

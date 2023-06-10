@@ -117,7 +117,6 @@ input {
 .homeSection1{
   padding: 5px;
   display: flex;
-  flex-direction: row;
 }
 
 .description1{
@@ -135,7 +134,6 @@ input {
 .homeSection2{
   padding: 5px;
   display: flex;
-  flex-direction: row;
 }
 
 .description2{
@@ -162,51 +160,7 @@ input {
   margin: 5px;
 }
 
-/* .ingredientSelector {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding:5px;
-  margin: 5px;
-  background-color: #10B251;
-}
 
-.ingredientSelector label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  flex-direction: row;
-}
-
-.ingredientSelector input[type="checkbox"] {
-  margin-right: 10px;
-  width: 20px;
-  height: 20px;
-}
-
-.ingredientSelection{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-/* .recipeSearch{
-  width: 50%;
-  float: left;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-} */
-
-/* .recipeResults {
-  width: 50%;
-  float: left;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: 5px;
-  margin: 5px;
-} */
 
 .recipeImage{
   max-width: 125px;
@@ -220,10 +174,7 @@ input {
   margin: 5px;
 }
 
-/* form {
-  display: flex;
-  flex-direction: column;
-} */
+
 
 input {
   max-width: 200px;
@@ -248,3 +199,6 @@ input {
   align-items: center;
 }
 
+.aboutInfo {
+  background-image: linear-gradient(to left, rgb(9, 116, 68, 1), rgba(9, 116, 68, .8));
+}

@@ -6,11 +6,11 @@ function About() {
             
             <div className="flex flex-col md:flex-row m-5">
                 <div>
-                    <div className="p-5">
+                    <div className="">
                         <img src={process.env.PUBLIC_URL + '/cuttingboard.jpg'} alt="cutting-board" className="about2" />
                     </div>
                 </div>
-                <div className="flex flex-col text-white p-5 bg-gradient-to-b from-green to-lightGreen m-5 items-left justify-center">
+                <div className="flex flex-col text-white p-5 aboutInfo m-2 items-left justify-center">
                     <p className="text-xl font-medium">About Us</p>
                     <br/>
                     <p className="">
@@ -21,7 +21,7 @@ function About() {
                     </p>
                 </div>
                 <div>
-                    <div className="p-5">
+                    <div className="">
                         <img src={process.env.PUBLIC_URL + '/Stirfry.jpg'} alt="stirfry" className="about2" />
                     </div>
                 </div>
@@ -30,7 +30,7 @@ function About() {
             <div className="flex flex-col md:flex-row m-5">
                 <div className="flex flex-col md:flex-row m-5 p-5 justify-center">
 
-                    <div className="flex flex-col justify-center text-white items-left bg-gradient-to-b from-green to-lightGreen p-5">
+                    <div className="flex flex-col justify-center text-white items-left aboutInfo p-5">
                        <b className="flex text-left text-xl">Here's what WFD offers:</b> 
                         <br />
                         <p><b>Ingredient Inventory: Keep Track of What You Have</b> 
@@ -45,7 +45,7 @@ function About() {
                         <p><b>Smart Search: Find Recipes in an Instant
                         Looking for a specific recipe?</b> <br/>WFD's search functionality lets you quickly find recipes based on ingredients you already have. No more endless scrolling through generic search results or having to purchase tons of new ingredients to make a great meal. WFD streamlines the process, making it effortless to find the perfect recipe for any occasion. </p>
                     </div>
-                    <div className="p-5">
+                    <div className="">
                         <img src={process.env.PUBLIC_URL + '/shakshuka.jpg'} alt="shakshuka" className="about1" />
                     </div>
                 </div>

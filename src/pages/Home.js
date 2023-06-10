@@ -2,8 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom"
 function Home({ loginUser, registerUser }) {
     return (
-        <div className="homeContainer flex flex-col md: flex-row">
-            <div className="homeSection1 flex flex-col md: flex-row m-5">
+        <div className="homeContainer flex flex-col ">
+            <div className="homeSection1 flex flex-col md:flex-row m-5">
                 <div className="description1">
                     <p>Open your refrigerator at the end of the day and not sure what to make? Want to try new recipes using the food you have on hand? Order out less? Try using, "What's for Dinner?" and make answering the question easier and a lot more fun!</p>
                     <h3>Sign up or Login to get started!</h3>
@@ -19,7 +19,7 @@ function Home({ loginUser, registerUser }) {
             <div className="recipeCarousel">
 
             </div>
-            <div className="homeSection2 flex flex-col md: flex-row m-5">
+            <div className="homeSection2 flex flex-col md:flex-row m-5">
                 <div className="homeImage">
                 <img src={process.env.PUBLIC_URL + '/WFDingredients.jpg'} alt="ingredietns" className="homeImage1" />
                 </div>

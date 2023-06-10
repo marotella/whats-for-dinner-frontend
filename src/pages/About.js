@@ -3,7 +3,7 @@ import React from "react";
 function About() {
     return (
         <div className="flex flex-col justify-center items-center w-full">
-            <h1 className="text-2xl font-medium text-orange mt-5">About Whats for Dinner</h1>
+            
             <div className="flex flex-col md:flex-row m-5">
                 <div>
                     <div className="p-5">

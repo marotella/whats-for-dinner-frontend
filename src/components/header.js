@@ -26,7 +26,7 @@ const NavBar = ({ isloggedIn, logoutUser }) => {
                             <Link
                                 to="/ingredients/new" className="text-white hover:text-orange flex justify-center items-center hover:underline"
                             >
-                                New
+                                New Ingredient
                             </Link>
                             <Link
                                 to="/ingredients/recipes" className="text-white hover:text-orange flex justify-center items-center hover:underline">

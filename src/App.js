@@ -43,12 +43,35 @@ function App() {
 
   console.log("Ingredient State:", ingredients);
   //CREATE - INGREDIENTS 
+  // const createIngredient = async (createdIngredient) => {
+  //   try {
+  //     console.log(createdIngredient)
+  //     const response = await fetch(`${baseUrl}/api/ingredients`, {
+  //       method: "POST",
+  //       body: JSON.stringify(createdIngredient),
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       credentials: "include"
+  //     });
+  //     if (!response.ok) {
+  //       throw new Error("Failed to create ingredient");
+  //     }
+  //     getIngredientData();
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
   const createIngredient = async (createdIngredient) => {
     try {
-      console.log(createdIngredient)
+      console.log(createdIngredient);
       const response = await fetch(`${baseUrl}/api/ingredients`, {
         method: "POST",
-        body: JSON.stringify(createdIngredient),
+        body: JSON.stringify({
+          ...createdIngredient,
+          owner_email: isLoggedIn  // Pass the user's email as owner_email
+        }),
         headers: {
           "Content-Type": "application/json"
         },
@@ -62,6 +85,8 @@ function App() {
       console.error(error);
     }
   };
+  
+
   //UPDATE - INGREDIETNS
   const updateIngredient = async (id, updatedIngredient) => {
     try {

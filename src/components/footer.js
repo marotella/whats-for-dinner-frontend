@@ -7,7 +7,7 @@ const Footer = ({ logoutUser }) => {
         <header>
             <div>
                 <nav className='footer'>
-                    <Link to="/" className="link">
+                    <Link to="/about" className="link">
                         About us
                     </Link>
                     <Link

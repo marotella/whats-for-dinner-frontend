@@ -10,9 +10,22 @@ const LoginForm = ({ loginUser, getIngredientData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    loginUser(username, email, password)
-    navigate("/ingredients")
-    getIngredientData()
+    try{
+      const response = await loginUser(username, email, password)
+      if (response.status === 200) {
+        navigate("/ingredients")
+        getIngredientData()
+    } else {
+      const errorMessageResponse = await response.json()
+      if (errorMessageResponse.message === "Your email and/or password is incorrect. Please try again."){
+        setErrorMessage("Your email and/or password is incorrect. Please try again.")
+      }
+    }
+  } catch (error) {
+    setErrorMessage("Your email and/or password is incorrect. Please try again.")
+    console.error(error)
+  }
+    
   }
   return (
     <div>
@@ -20,6 +33,8 @@ const LoginForm = ({ loginUser, getIngredientData }) => {
       <div className="flex flex-row">
         <div className=" w-full md:w-1/2 flex flex-col w-1/2 p-5">
           <p className="p-5">Enter your email and password below to login into your account.</p>
+          {errorMessage && <p className="text-orange p-5">{errorMessage}</p>}
+
 
           <form className="p-5" onSubmit={handleSubmit}>
             <label>

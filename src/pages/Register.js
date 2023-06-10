@@ -29,7 +29,7 @@ const RegisterForm = ({ registerUser }) => {
         }
       }
     } catch (error) {
-      setErrorMessage(error.message)
+      setErrorMessage("An error occured. Please try again.")
       console.error(error)
     }
   }
@@ -41,7 +41,7 @@ const RegisterForm = ({ registerUser }) => {
           <p className="p-5">
           Ready to embark on a culinary adventure? Join Whats for Dinner today and unleash your inner chef! 
           Enter your information below to create and account! Then you can get started creating your kitchen and finding new recipes to prepare.</p>
-        {errorMessage && <p class="text-orange p-5">{errorMessage}</p>}
+        {errorMessage && <p className="text-orange p-5">{errorMessage}</p>}
         <form className="p-5 flex flex-col" onSubmit={handleSubmit}>
           <label className="text-orange font-medium">
             Username:

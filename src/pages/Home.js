@@ -8,8 +8,8 @@ function Home({ loginUser, registerUser }) {
                     <p>Open your refrigerator at the end of the day and not sure what to make? Want to try new recipes using the food you have on hand? Order out less? Try using, "What's for Dinner?" and make answering the question easier and a lot more fun!</p>
                     <h3>Sign up or Login to get started!</h3>
                     <div className="buttonHome flex justify-center">
-                    <Link to={`/user/login`} class="flex text-green bg-white hover:text-orange text-m font-medium m-2 p-2 justify-center"><button>Sign In</button></Link>
-                    <Link to={`/user/register`} class="flex text-green bg-white hover:text-orange text-m font-medium m-2 p-2 justify-center"><button>Register</button> </Link>
+                    <Link to={`/user/login`} class="flex text-green bg-white hover:text-orange text-m font-medium m-2 p-2 justify-center active:bg-orange active:text-white"><button>Sign In</button></Link>
+                    <Link to={`/user/register`} class="flex text-green bg-white hover:text-orange text-m font-medium m-2 p-2 justify-center active:bg-orange active:text-white"><button>Register</button> </Link>
                     </div>
                 </div>
                 <div className="homeImage">

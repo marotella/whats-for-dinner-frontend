@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function NewIngredientForm({ createIngredient }) {
   const navigate = useNavigate()
@@ -38,9 +38,14 @@ function NewIngredientForm({ createIngredient }) {
   return (
     <div>
       <h3 className="p-5 font-medium fontsize text-2xl text-center">Add a new ingredient to your kitchen!</h3>
+      <div className="m-5">
+        <Link to="/ingredients" className="flex text-green items-center">  <span class="material-symbols-outlined">
+          arrow_back
+        </span>  Back </Link>
+      </div>
       <div className="flex flex-row">
-        
-        <div className= "flex flex-col p-5 w-1/2">
+
+        <div className="flex flex-col p-5 w-1/2">
           <p>Enter the name and quantity of the new ingredient below.</p>
           <form className="p-5 newIngredientForm" onSubmit={handleSubmit}>
             <label className="text-orange font-medium">

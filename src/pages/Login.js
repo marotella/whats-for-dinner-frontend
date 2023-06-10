@@ -65,7 +65,7 @@ const LoginForm = ({ loginUser, getIngredientData }) => {
               />
             </label>
             <div>
-              <button className="bg-green hover:bg-white border-lightGreen rounded-lg px-5 m-3 text-white hover:text-green focus:bg-orange focus:text-white" type="submit">Log In</button>
+              <button className="bg-green hover:bg-white border-lightGreen rounded-lg px-5 m-3 text-white hover:text-green focus:bg-orange focus:text-white active:bg-orange active:text-white" type="submit">Log In</button>
             </div>
           </form>
         </div>

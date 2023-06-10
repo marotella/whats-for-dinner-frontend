@@ -32,16 +32,16 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient, baseUrl 
     }
     //Displays ingredient information and buttons that perform update and delete
     return (
-      <section className="showSection">
+      <section className="showSection drop-shadow-xl">
         <div className="ingredientInfo">
           <div className="font-medium p-5">
             <h3 className="p-2">Ingredient: {ingredient.ingredient}</h3>
             <h3 className="p-2">Quantity: {ingredient.quantity}</h3>
             <div className="flex flex-row m-4 objects-center">
-              <button onClick={() => handleDelete(ingredient.id)} className="text-white bg-green p-2 m-2 hover:bg-white hover:text-green"><span className="material-symbols-outlined">
+              <button onClick={() => handleDelete(ingredient.id)} className="text-white bg-green p-2 m-2 hover:bg-white hover:text-green active:bg-orange active:text-white"><span className="material-symbols-outlined">
                 delete
               </span></button>
-              <Link to={`/ingredients/edit/${ingredient.id}`}><button className="text-white bg-green hover:bg-white hover:text-green p-2 m-2"><span className="material-symbols-outlined">
+              <Link to={`/ingredients/edit/${ingredient.id}`}><button className="text-white bg-green hover:bg-white hover:text-green active:bg-orange active:text-white p-2 m-2"><span className="material-symbols-outlined">
                 edit
               </span></button>
               </Link>
@@ -49,11 +49,11 @@ const Ingredient = ({ ingredients, getIngredientData, deleteIngredient, baseUrl 
           </div>
           <img className="ingredientShow" src={imageSource} alt={ingredient.ingredient} onError={(e) => e.target.src = fallbackImage} />
         </div>
-        <div>
-          <Link to="/ingredients" className="text-green">  <span className="material-symbols-outlined">
-            arrow_back
-          </span>  Back </Link>
-        </div>
+        <div className="m-5">
+                <Link to="/ingredients" className="flex text-green items-center drop-shadow-xl">  <span class="material-symbols-outlined">
+                    arrow_back
+                </span>  Back </Link>
+            </div>
       </section >
     );
   };

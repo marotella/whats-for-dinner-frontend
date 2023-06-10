@@ -11,11 +11,13 @@ const IngredientInfo = ({ ingredient, deleteIngredient, updateIngredient }) => {
   const fallbackImage = process.env.PUBLIC_URL + '/Fork.png';
   return (
 
-    <div className="ingredientTile">
+    <div className="ingredientTile drop-shadow-xl">
       <Link to={`/ingredients/${ingredient.id}`} className="p-2 font-medium text-orange hover:underline">
         <h4>{ingredient.ingredient}</h4>
       </Link>
-      <img className="ingredientThumb" src={imageSource} alt={ingredient.ingredient} onError={(e) => e.target.src = fallbackImage} />
+      <Link to={`/ingredients/${ingredient.id}`} className="">
+        <img className="ingredientThumb" src={imageSource} alt={ingredient.ingredient} onError={(e) => e.target.src = fallbackImage} />
+      </Link>
       <div className="flex items-center justify-between">
         <button onClick={() => handleDelete(ingredient.id)} className="flex justify-center p-2 text-orange hover:text-white hover:bg-orange m-1"><span class="material-symbols-outlined">
           delete

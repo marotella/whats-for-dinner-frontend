@@ -64,7 +64,29 @@ This application was designed for folks who enjoy cooking, want to reduce food w
 
 ## Initial Wireframe
 
+Home: 
+image.png
 
+Register/Sign in:
+image.png
+
+New form:
+image.png
+
+Edit form:
+image.png
+
+Index:
+image.png
+
+Show:
+image.png
+
+Search:
+image.png
+
+Search result:
+image.png
 
 ## Final Design
 

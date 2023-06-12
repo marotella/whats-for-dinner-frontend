@@ -64,29 +64,22 @@ This application was designed for folks who enjoy cooking, want to reduce food w
 
 ## Initial Wireframe
 
-Home: 
-c229e201-8c25-4bcb-b543-08bc1528497d.png
+## Home: 
+<img width="340" alt="c229e201-8c25-4bcb-b543-08bc1528497d" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/98aab9dd-c6a6-4d5d-9ea1-10e70a63095c">
 
-Register/Sign in:
-image.png
+## Register/Sign in:
 
-New form:
-image.png
+## New form:
 
-Edit form:
-image.png
+## Edit form:
 
-Index:
-image.png
+## Index:
 
-Show:
-image.png
+## Show:
 
-Search:
-image.png
+## Search:
 
-Search result:
-image.png
+## Search result:
 
 ## Final Design
 

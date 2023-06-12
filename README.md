@@ -65,7 +65,7 @@ This application was designed for folks who enjoy cooking, want to reduce food w
 ## Initial Wireframe
 
 Home: 
-image.png
+c229e201-8c25-4bcb-b543-08bc1528497d.png
 
 Register/Sign in:
 image.png

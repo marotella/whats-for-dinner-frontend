@@ -42,51 +42,44 @@ Users:
 ## Routes
 
 User Routes:
-Register: users/register - POST
-Login: users/login - POST
-Logout: users/logout - GET
+- Register: users/register - POST
+- Login: users/login - POST
+- Logout: users/logout - GET
 
 Ingredient Routes:
-Index: /ingredients - GET
-Show: /ingredients/<id> - GET
-Update: /ingredients/<id> - PUT
-Create: /ingredients - POST
-Delete: /ingredients/<id> - DELETE
+- Index: /ingredients - GET
+- Show: /ingredients/<id> - GET
+- Update: /ingredients/<id> - PUT
+- Create: /ingredients - POST
+- Delete: /ingredients/<id> - DELETE
 
 Recipe Routes:
-Search: /ingredients/api/search - POST
-Show: /ingredients/api/recipes/<recipe_id> - GET
+- Search: /ingredients/api/search - POST
+- Show: /ingredients/api/recipes/<recipe_id> - GET
 
 ## User Stories
 
-This application was designed for folks who enjoy cooking, want to reduce food waste, but may not have time or energy to find new recipes. The user to can mantain a database of their kitchen ingredients. The can view, edit, and update items in their kitchen. They can then use the ingredients they have to search a database of recipes that use those ingredients. They can view the full recipe and instructions on how to make the dish.
+This application was designed for folks who enjoy cooking, want to reduce food waste, but may not have time or energy to find new recipes. The user to can mantain a database of their kitchen ingredients. The can view, edit, and update items in their kitchen. They can then use the ingredients they have to search a database of recipes that use those ingredients. They can view the full recipe and instructions on how to make the dish as well. 
+Users have to create an account, and login to access these features.
 
 
 ## Initial Wireframe
 
 Home: 
-c229e201-8c25-4bcb-b543-08bc1528497d.png
 
 Register/Sign in:
-image.png
 
 New form:
-image.png
 
 Edit form:
-image.png
 
 Index:
-image.png
 
 Show:
-image.png
 
 Search:
-image.png
 
 Search result:
-image.png
 
 ## Final Design
 

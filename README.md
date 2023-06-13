@@ -1,6 +1,8 @@
 # What's for Dinner
 
-Live Link:
+## Live Link: https://whats-for-dinner.herokuapp.com
+- Backend Repo:https://github.com/marotella/whats-for-dinner-backend
+- Backend Deployed: https://whats-for-dinner-backend.herokuapp.com
 
 What's For Dinner, is an application which allows a user to track what ingredients they have in thier kitchen, and find recipes that they can make using those ingredients. The application works to reduce food waste, ease deicsion making around meal times, and discover new recipes.
 
@@ -67,21 +69,58 @@ Users have to create an account, and login to access these features.
 
 Home: 
 
-Register/Sign in:
+## Register/Sign in:
+![image-1](https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/c1015046-6988-4b61-b158-b9c043a86a93)
 
-New form:
+## New form:
+![image](https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/19243f11-0961-4b63-a5a1-1d256806f535)
 
-Edit form:
+## Show:
+<img width="540" alt="Screenshot 2023-06-12 at 7 51 22 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/a216454b-50e3-4f50-84fa-874ec5203ebd">
 
-Index:
+## Index:
+<img width="460" alt="Screenshot 2023-06-12 at 7 51 44 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/83170ae5-a4b1-4eb9-91e6-444088889fd9">
 
-Show:
+## Edit:
+<img width="460" alt="Screenshot 2023-06-12 at 7 52 03 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/22d4011d-05e2-4340-9b27-e8ab43999f51">
 
-Search:
+## Search:
+<img width="460" alt="Screenshot 2023-06-12 at 7 51 51 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/c5d3cdff-d969-436e-a561-0c6baf6db9c8">
 
-Search result:
+## Search result:
+<img width="460" alt="Screenshot 2023-06-12 at 7 52 13 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/8bf347c9-1735-430b-8d4c-e384c9b7e521">
 
+ 
 ## Final Design
+ ## Home: 
+<img width="1318" alt="Screenshot 2023-06-12 at 7 55 04 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/5a3b42de-1eb5-4446-8ba0-08c8cbd5d014">
+ 
+## Register/Sign in:
+<img width="1318" alt="Screenshot 2023-06-12 at 7 55 16 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/fbfb5675-4a9d-4ba0-9e49-0c53629c1197">
+<img width="1318" alt="Screenshot 2023-06-12 at 7 55 32 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/74d3ae20-954c-4d27-a681-09ef23b723f1">
+
+
+## New form:
+<img width="1318" alt="Screenshot 2023-06-12 at 7 56 30 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/d6350eea-7fe7-4256-aac3-b4e004e2040c">
+
+ 
+## Show:
+<img width="1318" alt="Screenshot 2023-06-12 at 7 56 13 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/8d8ead02-68a5-46b4-8ae0-e4d34d146d7e">
+
+ 
+## Index:
+<img width="1318" alt="Screenshot 2023-06-12 at 7 55 59 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/bb0a11c6-f29f-4729-85e9-4f9b3d7ceb0a">
+
+## Edit:
+<img width="1318" alt="Screenshot 2023-06-12 at 7 56 22 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/cb0b0207-5aac-4460-abbd-f92413b068b9">
+
+ 
+## Search:
+<img width="1288" alt="Screenshot 2023-06-12 at 7 57 11 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/188e8493-b61e-48e6-a451-9e6fc36c036b">
+
+ 
+## Search result:
+<img width="1288" alt="Screenshot 2023-06-12 at 7 57 37 PM" src="https://github.com/marotella/whats-for-dinner-frontend/assets/111547566/16a41445-2757-41b6-bce0-d133cdeb0fcd">
 
 
 ## Next Steps:

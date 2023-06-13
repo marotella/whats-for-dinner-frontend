@@ -33,7 +33,7 @@ The application also uses data from an external API: https://www.themealdb.com/a
 - Implementing Tailwind for CSS. - Completed
 
 ## Approach
-- Developed full CRUD operations using Flask.
+- Developed full CRUD operations using Flask and tested routes with Postman.
 - Fetched data from external API and reviewed data structure using Postman
 - Developed frontend components and connected to the backend.
 - Implemented user authorization, by using state in React.
@@ -72,9 +72,11 @@ Recipe Routes:
 
 ## User Stories
 
-This application was designed for folks who enjoy cooking, want to reduce food waste, but may not have time or energy to find new recipes. The user to can mantain a database of their kitchen ingredients. The can view, edit, and update items in their kitchen. They can then use the ingredients they have to search a database of recipes that use those ingredients. They can view the full recipe and instructions on how to make the dish as well. 
-Users have to create an account, and login to access these features.
-
+This application was designed for folks who enjoy cooking, want to reduce food waste, but may not have time or energy to find new recipes. 
+- The user to can mantain a database of their kitchen ingredients. The can view, edit, and update items in their kitchen. 
+- They can then use the ingredients they have to search a database of recipes that use those ingredients. 
+- They can view the full recipe and instructions on how to make the dish as well. 
+- Users have to create an account, and login to access these features.
 
 ## Initial Wireframe
 

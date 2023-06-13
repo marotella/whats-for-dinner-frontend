@@ -1,8 +1,8 @@
 # What's for Dinner
 
-Live Link: https://whats-for-dinner.herokuapp.com
-Backend Repo:https://github.com/marotella/whats-for-dinner-backend
-Backend Deployed: https://whats-for-dinner-backend.herokuapp.com
+## Live Link: https://whats-for-dinner.herokuapp.com
+- Backend Repo:https://github.com/marotella/whats-for-dinner-backend
+- Backend Deployed: https://whats-for-dinner-backend.herokuapp.com
 
 What's For Dinner, is an application which allows a user to track what ingredients they have in thier kitchen, and find recipes that they can make using those ingredients. The application works to reduce food waste, ease deicsion making around meal times, and discover new recipes.
 

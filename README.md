@@ -20,6 +20,17 @@ The application also uses data from an external API: https://www.themealdb.com/a
 ## Installation:
 - Necessary to install: Flask, React, Tailwind, Heroku, Peewee, SQLite, CORS, Dotenv, Gunicorn
 
+## MVP Goals
+
+- A full CRUD app for ingredients.
+- User authorization in place for update, create, and delete.
+- The ability to search an API for recipes with selected ingredients.
+- The ability to register, login, and logout from an account.
+
+## Stretch Goals
+
+- One-to-many for a user's ingredients, and/or saving recipes.
+- Implementing Tailwind for CSS. - Completed
 
 ## Approach
 - Developed full CRUD operations using Flask.
